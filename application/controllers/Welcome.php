@@ -3,7 +3,10 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Welcome extends CI_Controller
 {
-
+	function __construct()
+	{
+		parent::__construct();
+	}
 	/**
 	 * Index Page for this controller.
 	 *
@@ -21,11 +24,6 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		$data['title'] = 'Home';
-		$this->load->view('home', $data);
-	}
-	public function about()
-	{
-		$this->load->view('admin/index');
+		$this->load->view('welcome_message');
 	}
 }
