@@ -1,5 +1,4 @@
 <?php $this->load->view('layouts/template'); ?>
-<h1>Hello</h1>
 <div id="app">
     <div class="main-wrapper">
         <div class="navbar-bg"></div>
@@ -36,19 +35,19 @@
                         <div class="search-header">Result</div>
                         <div class="search-item">
                             <a href="#">
-                                <img class="mr-3 rounded" width="30" src="../assets/img/products/product-3-50.png" alt="product" />
+                                <img class="mr-3 rounded" width="30" src="<?php echo base_url('assets/img/products/product-3-50.png'); ?>" alt="product" />
                                 oPhone S9 Limited Edition
                             </a>
                         </div>
                         <div class="search-item">
                             <a href="#">
-                                <img class="mr-3 rounded" width="30" src="../assets/img/products/product-2-50.png" alt="product" />
+                                <img class="mr-3 rounded" width="30" src="<?php echo base_url('assets/img/products/product-2-50.png'); ?>" alt="product" />
                                 Drone X2 New Gen-7
                             </a>
                         </div>
                         <div class="search-item">
                             <a href="#">
-                                <img class="mr-3 rounded" width="30" src="../assets/img/products/product-1-50.png" alt="product" />
+                                <img class="mr-3 rounded" width="30" src="<?php echo base_url('/assets/img/products/product-1-50.png'); ?>" alt="product" />
                                 Headphone Blitz
                             </a>
                         </div>
@@ -85,7 +84,7 @@
                         <div class="dropdown-list-content dropdown-list-message">
                             <a href="#" class="dropdown-item dropdown-item-unread">
                                 <div class="dropdown-item-avatar">
-                                    <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle" />
+                                    <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle" />
                                     <div class="is-online"></div>
                                 </div>
                                 <div class="dropdown-item-desc">
@@ -96,7 +95,7 @@
                             </a>
                             <a href="#" class="dropdown-item dropdown-item-unread">
                                 <div class="dropdown-item-avatar">
-                                    <img alt="image" src="../assets/img/avatar/avatar-2.png" class="rounded-circle" />
+                                    <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-2.png'); ?>" class="rounded-circle" />
                                 </div>
                                 <div class="dropdown-item-desc">
                                     <b>Dedik Sugiharto</b>
@@ -108,7 +107,7 @@
                             </a>
                             <a href="#" class="dropdown-item dropdown-item-unread">
                                 <div class="dropdown-item-avatar">
-                                    <img alt="image" src="../assets/img/avatar/avatar-3.png" class="rounded-circle" />
+                                    <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-3.png'); ?>" class="rounded-circle" />
                                     <div class="is-online"></div>
                                 </div>
                                 <div class="dropdown-item-desc">
@@ -122,7 +121,7 @@
                             </a>
                             <a href="#" class="dropdown-item">
                                 <div class="dropdown-item-avatar">
-                                    <img alt="image" src="../assets/img/avatar/avatar-4.png" class="rounded-circle" />
+                                    <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-4.png'); ?>" class="rounded-circle" />
                                 </div>
                                 <div class="dropdown-item-desc">
                                     <b>Ardian Rahardiansyah</b>
@@ -135,7 +134,7 @@
                             </a>
                             <a href="#" class="dropdown-item">
                                 <div class="dropdown-item-avatar">
-                                    <img alt="image" src="../assets/img/avatar/avatar-5.png" class="rounded-circle" />
+                                    <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-5.png'); ?>" class="rounded-circle" />
                                 </div>
                                 <div class="dropdown-item-desc">
                                     <b>Alfa Zulkarnain</b>
@@ -216,7 +215,7 @@
                 </li>
                 <li class="dropdown">
                     <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1" />
+                        <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1" />
                         <div class="d-sm-none d-lg-inline-block">
                             Hi, Ujang Maman
                         </div>
@@ -661,7 +660,7 @@
                             <div class="card-body" id="top-5-scroll">
                                 <ul class="list-unstyled list-unstyled-border">
                                     <li class="media">
-                                        <img class="mr-3 rounded" width="55" src="../assets/img/products/product-3-50.png" alt="product" />
+                                        <img class="mr-3 rounded" width="55" src="<?php echo base_url('assets/img/products/product-3-'); ?>50.png" alt="product" />
                                         <div class="media-body">
                                             <div class="float-right">
                                                 <div class="font-weight-600 text-muted text-small">
@@ -682,7 +681,7 @@
                                         </div>
                                     </li>
                                     <li class="media">
-                                        <img class="mr-3 rounded" width="55" src="../assets/img/products/product-4-50.png" alt="product" />
+                                        <img class="mr-3 rounded" width="55" src="<?php echo base_url('assets/img/products/product-4-'); ?>50.png" alt="product" />
                                         <div class="media-body">
                                             <div class="float-right">
                                                 <div class="font-weight-600 text-muted text-small">
@@ -703,7 +702,7 @@
                                         </div>
                                     </li>
                                     <li class="media">
-                                        <img class="mr-3 rounded" width="55" src="../assets/img/products/product-1-50.png" alt="product" />
+                                        <img class="mr-3 rounded" width="55" src="<?php echo base_url('assets/img/products/product-1-'); ?>50.png" alt="product" />
                                         <div class="media-body">
                                             <div class="float-right">
                                                 <div class="font-weight-600 text-muted text-small">
@@ -724,7 +723,7 @@
                                         </div>
                                     </li>
                                     <li class="media">
-                                        <img class="mr-3 rounded" width="55" src="../assets/img/products/product-3-50.png" alt="product" />
+                                        <img class="mr-3 rounded" width="55" src="<?php echo base_url('assets/img/products/product-3-'); ?>50.png" alt="product" />
                                         <div class="media-body">
                                             <div class="float-right">
                                                 <div class="font-weight-600 text-muted text-small">
@@ -745,7 +744,7 @@
                                         </div>
                                     </li>
                                     <li class="media">
-                                        <img class="mr-3 rounded" width="55" src="../assets/img/products/product-5-50.png" alt="product" />
+                                        <img class="mr-3 rounded" width="55" src="<?php echo base_url('assets/img/products/product-5-'); ?>50.png" alt="product" />
                                         <div class="media-body">
                                             <div class="float-right">
                                                 <div class="font-weight-600 text-muted text-small">
@@ -791,7 +790,7 @@
                                     <div>
                                         <div class="product-item pb-3">
                                             <div class="product-image">
-                                                <img alt="image" src="../assets/img/products/product-4-50.png" class="img-fluid" />
+                                                <img alt="image" src="<?php echo base_url('assets/img/products/product-4-'); ?>50.png" class="img-fluid" />
                                             </div>
                                             <div class="product-details">
                                                 <div class="product-name">iBook Pro 2018</div>
@@ -812,7 +811,7 @@
                                     <div>
                                         <div class="product-item">
                                             <div class="product-image">
-                                                <img alt="image" src="../assets/img/products/product-3-50.png" class="img-fluid" />
+                                                <img alt="image" src="<?php echo base_url('assets/img/products/product-3-'); ?>50.png" class="img-fluid" />
                                             </div>
                                             <div class="product-details">
                                                 <div class="product-name">oPhone S9 Limited</div>
@@ -833,7 +832,7 @@
                                     <div>
                                         <div class="product-item">
                                             <div class="product-image">
-                                                <img alt="image" src="../assets/img/products/product-1-50.png" class="img-fluid" />
+                                                <img alt="image" src="<?php echo base_url('assets/img/products/product-1-'); ?>50.png" class="img-fluid" />
                                             </div>
                                             <div class="product-details">
                                                 <div class="product-name">Headphone Blitz</div>
@@ -866,7 +865,7 @@
                                         <div class="text-title mb-2">July</div>
                                         <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/id.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons.flaticon.com/png/512/6157/premium/6157721.png?token=exp=1647504676~hmac=0f781b3e5632c14d7e7ef0f3cb74f3d1" alt="image" width="40" />
                                                 <div class="media-body ml-3">
                                                     <div class="media-title">Indonesia</div>
                                                     <div class="text-small text-muted">
@@ -876,7 +875,7 @@
                                                 </div>
                                             </li>
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/my.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons.flaticon.com/png/512/4854/premium/4854148.png?token=exp=1647504709~hmac=5ccaf25d394e2b2be90392356446ef5d" alt="image" width="40" />
                                                 <div class="media-body ml-3">
                                                     <div class="media-title">Malaysia</div>
                                                     <div class="text-small text-muted">
@@ -886,9 +885,9 @@
                                                 </div>
                                             </li>
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/us.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons-png.flaticon.com/512/197/197496.png" alt="image" width="40" />
                                                 <div class="media-body ml-3">
-                                                    <div class="media-title">United States</div>
+                                                    <div class="media-title">Singapore</div>
                                                     <div class="text-small text-muted">
                                                         1,576
                                                         <i class="fas fa-caret-up text-success"></i>
@@ -901,7 +900,7 @@
                                         <div class="text-title mb-2">August</div>
                                         <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/id.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons.flaticon.com/png/512/6157/premium/6157721.png?token=exp=1647504676~hmac=0f781b3e5632c14d7e7ef0f3cb74f3d1" alt="image" width="40" />
                                                 <div class="media-body ml-3">
                                                     <div class="media-title">Indonesia</div>
                                                     <div class="text-small text-muted">
@@ -911,7 +910,7 @@
                                                 </div>
                                             </li>
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/ps.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons-png.flaticon.com/512/197/197467.png" alt="image" width="40" />
                                                 <div class="media-body ml-3">
                                                     <div class="media-title">Palestine</div>
                                                     <div class="text-small text-muted">
@@ -921,7 +920,7 @@
                                                 </div>
                                             </li>
                                             <li class="media">
-                                                <img class="img-fluid mt-1 img-shadow" src="../node_modules/flag-icon-css/flags/4x3/de.svg" alt="image" width="40" />
+                                                <img class="img-fluid mt-1 img-shadow" src="https://cdn-icons-png.flaticon.com/512/197/197571.png" alt="image" width="40" />
                                                 <div class="media-body ml-3">
                                                     <div class="media-title">Germany</div>
                                                     <div class="text-small text-muted">
@@ -1069,9 +1068,9 @@
         </div>
         <footer class="main-footer">
             <div class="footer-left">
-                Copyright &copy; 2018
+                Copyright &copy; 2022
                 <div class="bullet"></div>
-                Design By <a href="https://nauval.in/">Muhamad Nauval Azhar</a>
+                Design By <a href="https://rd-portofolio.vercel.app/">Muhamad Ridho Budikusuma</a>
             </div>
             <div class="footer-right">2.3.0</div>
         </footer>
