@@ -17,7 +17,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <!-- load navbar from components -->
+                <!-- load section here -->
             </div>
         </div>
     </div>
