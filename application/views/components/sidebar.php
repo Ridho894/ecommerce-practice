@@ -26,13 +26,16 @@
                     <li>
                         <a class="nav-link" href="bootstrap-breadcrumb.html">SiCepat</a>
                     </li>
+                    <li>
+                        <a class="nav-link" href="bootstrap-breadcrumb.html">ADD CATEGORY</a>
+                    </li>
                 </ul>
             </li>
             <li class="nav-item <?= $title === "Member" ? "active" : ""; ?>">
                 <a href="<?= base_url(); ?>index.php/pages/member" class="nav-link"><i class="fas fa-paper-plane"></i> <span>Member</span></a>
             </li>
-            <li class="nav-item <?= $title === "Dashboard" ? "active" : ""; ?>">
-                <a href="#" class="nav-link"><i class="fas fa-th-large"></i> <span>Toko</span></a>
+            <li class="nav-item <?= $title === "Store" ? "active" : ""; ?>">
+                <a href="<?= base_url(); ?>index.php/pages/store" class="nav-link"><i class="fas fa-th-large"></i> <span>Store</span></a>
             </li>
         </ul>
 
