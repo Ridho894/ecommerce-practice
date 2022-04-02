@@ -32,4 +32,19 @@ class Pages extends CI_Controller
         $data['title'] = 'Dashboard';
         $this->load->view('admin/index', $data);
     }
+    public function category()
+    {
+        $data['title'] = 'Category';
+        $this->load->view('admin/category', $data);
+    }
+    public function delivery()
+    {
+        $data['title'] = 'Delivery Service';
+        $this->load->view('admin/delivery', $data);
+    }
+    public function member()
+    {
+        $data['title'] = 'Member';
+        $this->load->view('admin/member', $data);
+    }
 }
