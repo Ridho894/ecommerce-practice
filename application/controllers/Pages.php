@@ -37,6 +37,11 @@ class Pages extends CI_Controller
         $data['title'] = 'Category';
         $this->load->view('admin/category', $data);
     }
+    public function add_category()
+    {
+        $data['title'] = 'Add Category';
+        $this->load->view('admin/add_category', $data);
+    }
     public function delivery()
     {
         $data['title'] = 'Delivery Service';

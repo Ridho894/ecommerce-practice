@@ -26,8 +26,8 @@
                     <li>
                         <a class="nav-link" href="bootstrap-breadcrumb.html">SiCepat</a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="bootstrap-breadcrumb.html">ADD CATEGORY</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url(); ?>index.php/pages/add_category">ADD CATEGORY</a>
                     </li>
                 </ul>
             </li>
