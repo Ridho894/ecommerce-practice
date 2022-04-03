@@ -12,7 +12,7 @@
                 <a href="<?= base_url(); ?>index.php/pages/dashboard" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
             </li>
             <li class="nav-item <?= $title === "Category" ? "active" : ""; ?>">
-                <a href="<?= base_url(); ?>index.php/pages/category" class="nav-link"><i class="fas fa-columns"></i> <span>Category</span></a>
+                <a href="<?= base_url(); ?>index.php/pages/category" class="nav-link"><i class="fas fa-th-large"></i> <span>Category</span></a>
             </li>
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-paper-plane"></i> <span>Service Delivery</span></a>
@@ -32,10 +32,10 @@
                 </ul>
             </li>
             <li class="nav-item <?= $title === "Member" ? "active" : ""; ?>">
-                <a href="<?= base_url(); ?>index.php/pages/member" class="nav-link"><i class="fas fa-paper-plane"></i> <span>Member</span></a>
+                <a href="<?= base_url(); ?>index.php/pages/member" class="nav-link"><i class="fas fa-users"></i> <span>Members</span></a>
             </li>
             <li class="nav-item <?= $title === "Store" ? "active" : ""; ?>">
-                <a href="<?= base_url(); ?>index.php/pages/store" class="nav-link"><i class="fas fa-th-large"></i> <span>Store</span></a>
+                <a href="<?= base_url(); ?>index.php/pages/store" class="nav-link"><i class="fas fa-store"></i> <span>Store</span></a>
             </li>
         </ul>
 
