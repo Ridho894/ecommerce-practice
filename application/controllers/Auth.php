@@ -4,7 +4,7 @@ class Auth extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        // $this->load->model('Auth_Model');
+        $this->load->model('Auth_Model');
     }
     /**
      * Index Page for this controller.
@@ -44,6 +44,28 @@ class Auth extends CI_Controller
     public function register_user()
     {
         $data['title'] = 'Register';
-        $this->load->view('auth/register', $data);
+        $first_name = $this->input->post('first_name');
+        $last_name = $this->input->post('last_name');
+        $full_name = $first_name . ' ' . $last_name;
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $password_confirm = $this->input->post('password-confirm');
+        if ($password != $password_confirm) {
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Password not match!
+            </div>');
+            redirect('auth/register');
+        } else {
+            $data = array(
+                'full_name' => $full_name,
+                'email' => $email,
+                'password' => $password,
+            );
+            $this->Auth_Model->register($data);
+            $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Your account has been created! Please login.
+            </div>');
+            redirect('auth/login');
+        }
     }
 }
