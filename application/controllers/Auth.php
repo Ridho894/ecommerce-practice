@@ -5,6 +5,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_Model');
+        $this->load->helper('url');
     }
     /**
      * Index Page for this controller.
@@ -35,6 +36,24 @@ class Auth extends CI_Controller
     {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
+        // make login
+        $user_id = $this->Auth_Model->login($email, $password);
+        if ($user_id) {
+            // create session
+            $user_data = array(
+                'user_id' => $user_id,
+                'email' => $email,
+                'is_login' => 1,
+            );
+            $this->session->set_userdata($user_data);
+            // set message
+            $this->session->set_flashdata('user_loggedin', 'You are now logged in');
+            redirect('pages/index');
+        } else {
+            // set message
+            $this->session->set_flashdata('login_failed', 'Login is invalid');
+            redirect('auth/login');
+        }
     }
     public function register()
     {

@@ -25,6 +25,9 @@ class Pages extends CI_Controller
     public function index()
     {
         $data['title'] = 'Home';
+        // get session data
+        $session_data = $this->session->userdata();
+        var_dump($session_data);
         $this->load->view('guest/home', $data);
     }
     public function dashboard()
