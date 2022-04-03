@@ -12,9 +12,8 @@
                         <div class="card-header">
                             <h4>Login</h4>
                         </div>
-
                         <div class="card-body">
-                            <form method="POST" action="#" class="needs-validation" novalidate="">
+                            <form method="POST" action="<?php echo base_url() ?>index.php/auth/login_user" class="needs-validation" novalidate="">
                                 <div class="form-group">
                                     <label for="email">Email</label>
                                     <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>
@@ -51,8 +50,7 @@
                                     </button>
                                 </div>
                                 <div class="mt-5 text-muted text-center">
-                                    <!-- Don't have an account? <a href="<?php echo base_url('auth/register'); ?>">Create One</a> -->
-                                    Don't have an account? <a href="<?php echo base_url('auth/register'); ?>">Create One</a>
+                                    Don't have an account? <a href="<?= base_url(); ?>index.php/auth/register">Create One</a>
                                 </div>
                             </form>
                         </div>

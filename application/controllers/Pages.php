@@ -25,7 +25,7 @@ class Pages extends CI_Controller
     public function index()
     {
         $data['title'] = 'Home';
-        $this->load->view('home', $data);
+        $this->load->view('guest/home', $data);
     }
     public function dashboard()
     {
@@ -41,6 +41,11 @@ class Pages extends CI_Controller
     {
         $data['title'] = 'Add Category';
         $this->load->view('admin/add_category', $data);
+    }
+    public function add_service_delivery()
+    {
+        $data['title'] = 'Add Service Delivery';
+        $this->load->view('admin/add_service_delivery', $data);
     }
     public function delivery()
     {

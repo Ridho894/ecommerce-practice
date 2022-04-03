@@ -17,8 +17,8 @@
                 </li>
             </ul>
             <div>
-                <a href="/login" class="btn btn-primary" type="button">LOGIN</a>
-                <a href="/register" class="btn btn-danger ml-3" type="button">REGISTER</a>
+                <a href="<?= base_url(); ?>index.php/auth/login" class="btn btn-primary" type="button">LOGIN</a>
+                <a href="<?= base_url(); ?>index.php/auth/register" class="btn btn-danger ml-3" type="button">REGISTER</a>
             </div>
         </div>
     </div>

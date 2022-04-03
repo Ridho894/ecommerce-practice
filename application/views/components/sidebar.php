@@ -15,7 +15,7 @@
                 <a href="<?= base_url(); ?>index.php/pages/category" class="nav-link"><i class="fas fa-columns"></i> <span>Category</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-paper-plane"></i> <span>Jasa Pengiriman</span></a>
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-paper-plane"></i> <span>Service Delivery</span></a>
                 <ul class="dropdown-menu">
                     <li>
                         <a class="nav-link" href="bootstrap-alert.html">Jnt</a>
@@ -27,7 +27,7 @@
                         <a class="nav-link" href="bootstrap-breadcrumb.html">SiCepat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>index.php/pages/add_category">ADD CATEGORY</a>
+                        <a class="nav-link" href="<?= base_url(); ?>index.php/pages/add_service_delivery">ADD SERVICE DELIVERY</a>
                     </li>
                 </ul>
             </li>
