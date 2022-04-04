@@ -233,7 +233,7 @@
             <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="<?php echo base_url('assets/img/avatar/avatar-1.png'); ?>" class="rounded-circle mr-1" />
                 <div class="d-sm-none d-lg-inline-block">
-                    Hi, <?= $session['email']; ?>
+                    Hi, <?= $session['name']; ?>
                 </div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
@@ -248,9 +248,9 @@
                     <i class="fas fa-cog"></i> Settings
                 </a>
                 <div class="dropdown-divider"></div>
-                <button type="button" data-toggle="modal" data-target="#exampleModal" style="display: flex;align-items: center;" class="dropdown-item has-icon text-danger">
+                <a href="<?= base_url(); ?>index.php/auth/logout" class="dropdown-item has-icon text-danger">
                     <i class="fas fa-sign-out-alt"></i> Logout
-                </button>
+                </a>
             </div>
         </li>
     </ul>

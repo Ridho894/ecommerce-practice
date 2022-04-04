@@ -6,6 +6,7 @@ class Pages extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->helper('url');
     }
     /**
      * Index Page for this controller.
@@ -36,6 +37,9 @@ class Pages extends CI_Controller
             'title' => "Home",
             'session' => $this->session->userdata(),
         );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/index', $data);
     }
     public function category()

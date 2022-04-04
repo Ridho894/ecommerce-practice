@@ -41,14 +41,15 @@ class Auth extends CI_Controller
         if ($user_id) {
             // create session
             $user_data = array(
-                'user_id' => $user_id,
+                'user_id' => $user_id->id,
+                'name' => $user_id->name,
                 'email' => $email,
                 'is_login' => 1,
             );
             $this->session->set_userdata($user_data);
             // set message
             $this->session->set_flashdata('user_loggedin', 'You are now logged in');
-            redirect('pages/index');
+            redirect('pages/dashboard');
         } else {
             // set message
             $this->session->set_flashdata('login_failed', 'Login is invalid');
@@ -86,5 +87,13 @@ class Auth extends CI_Controller
             </div>');
             redirect('auth/login');
         }
+    }
+    public function logout()
+    {
+        $this->session->unset_userdata('user_id');
+        $this->session->unset_userdata('email');
+        $this->session->unset_userdata('is_login');
+        $this->session->set_flashdata('user_loggedout', 'You are now logged out');
+        redirect('auth/login');
     }
 }

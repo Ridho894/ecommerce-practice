@@ -22,4 +22,10 @@ class Auth_Model extends CI_Model
     {
         $this->db->insert('tbl_admin', $data);
     }
+    public function get_name($user_id)
+    {
+        $this->db->where('id', $user_id);
+        $query = $this->db->get('tbl_admin');
+        return $query->row()->name;
+    }
 }
