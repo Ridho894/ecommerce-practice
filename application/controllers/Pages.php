@@ -28,12 +28,14 @@ class Pages extends CI_Controller
             'title' => "Home",
             'session' => $this->session->userdata(),
         );
-        $session_data = $this->session->userdata();
         $this->load->view('guest/home', $data);
     }
     public function dashboard()
     {
-        $data['title'] = 'Dashboard';
+        $data = array(
+            'title' => "Home",
+            'session' => $this->session->userdata(),
+        );
         $this->load->view('admin/index', $data);
     }
     public function category()
@@ -48,7 +50,7 @@ class Pages extends CI_Controller
     }
     public function add_service_delivery()
     {
-        $data['title'] = 'Add Service Delivery';
+        $data['title'] = 'Delivery Service';
         $this->load->view('admin/add_service_delivery', $data);
     }
     public function delivery()

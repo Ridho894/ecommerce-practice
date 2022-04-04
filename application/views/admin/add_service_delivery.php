@@ -17,18 +17,9 @@
                     </div>
                 </div>
             </section>
-            <div class="section-body">
-                <h4 class="section-title">Forms</h4>
-                <p class="section-lead">
-                    Examples and usage guidelines for form control styles, layout options, and custom components for creating a wide variety of forms.
-                </p>
-            </div>
             <div class="">
                 <div class="">
                     <div class="card">
-                        <div class="card-header">
-                            <h4>Form Add Service Delivery</h4>
-                        </div>
                         <div class="card-body">
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Kurir</label>
@@ -72,8 +63,11 @@
                             </div>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">
-                                Sign in
+                            <button type="submit" class="btn btn-warning">
+                                ADD
+                            </button>
+                            <button type="button" class="btn btn-danger">
+                                CANCEL
                             </button>
                         </div>
                     </div>
