@@ -11,7 +11,7 @@
                 ...
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">YES</button>
+                <a href="<?= base_url(); ?>index.php/auth/logout" class="btn btn-danger">YES</a>
                 <button type="button" class="btn btn-primary">NO</button>
             </div>
         </div>
@@ -248,9 +248,9 @@
                     <i class="fas fa-cog"></i> Settings
                 </a>
                 <div class="dropdown-divider"></div>
-                <a href="<?= base_url(); ?>index.php/auth/logout" class="dropdown-item has-icon text-danger">
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
                     <i class="fas fa-sign-out-alt"></i> Logout
-                </a>
+                </button>
             </div>
         </li>
     </ul>

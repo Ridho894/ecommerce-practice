@@ -47,8 +47,6 @@ class Auth extends CI_Controller
                 'is_login' => 1,
             );
             $this->session->set_userdata($user_data);
-            // set message
-            $this->session->set_flashdata('user_loggedin', 'You are now logged in');
             redirect('pages/dashboard');
         } else {
             // set message

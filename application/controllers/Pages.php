@@ -63,7 +63,22 @@ class Pages extends CI_Controller
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/add_category', $data);
+        $categoryName = $this->input->post('categoryName');
+        $data_database = array(
+            'nama' => $categoryName,
+        );
+        $this->Admin_Model->addCategory($data_database);
+        redirect('pages/category', $data);
+    }
+    public function delete_category($id)
+    {
+        $data = array(
+            'title' => "Add Category",
+            'session' => $this->session->userdata(),
+        );
+        // delete data
+        $this->Admin_Model->deleteCategory($id);
+        redirect('pages/category', $data);
     }
     public function add_service_delivery()
     {

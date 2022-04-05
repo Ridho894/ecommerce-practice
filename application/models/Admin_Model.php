@@ -12,4 +12,13 @@ class Admin_Model extends CI_Model
         $query = $this->db->get('tbl_kategori');
         return $query->result_array();
     }
+    public function addCategory($data)
+    {
+        $this->db->insert('tbl_kategori', $data);
+    }
+    public function deleteCategory($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tbl_kategori');
+    }
 }
