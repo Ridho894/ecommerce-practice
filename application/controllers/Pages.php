@@ -6,6 +6,7 @@ class Pages extends CI_Controller
     function __construct()
     {
         parent::__construct();
+        $this->load->model('Admin_Model');
         $this->load->helper('url');
     }
     /**
@@ -27,14 +28,13 @@ class Pages extends CI_Controller
     {
         $data = array(
             'title' => "Home",
-            'session' => $this->session->userdata(),
         );
         $this->load->view('guest/home', $data);
     }
     public function dashboard()
     {
         $data = array(
-            'title' => "Home",
+            'title' => "Dashboard",
             'session' => $this->session->userdata(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
@@ -44,27 +44,58 @@ class Pages extends CI_Controller
     }
     public function category()
     {
-        $data['title'] = 'Category';
+        $data = array(
+            'title' => "Category",
+            'session' => $this->session->userdata(),
+            'category' => $this->Admin_Model->getCategory(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/category', $data);
     }
     public function add_category()
     {
-        $data['title'] = 'Add Category';
+        $data = array(
+            'title' => "Add Category",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/add_category', $data);
     }
     public function add_service_delivery()
     {
-        $data['title'] = 'Delivery Service';
+        $data = array(
+            'title' => "Delivery Service",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/add_service_delivery', $data);
     }
     public function delivery()
     {
-        $data['title'] = 'Delivery Service';
+        $data = array(
+            'title' => "Delivery Service",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/delivery', $data);
     }
     public function member()
     {
-        $data['title'] = 'Member';
+        $data = array(
+            'title' => "Member",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/member', $data);
     }
 }

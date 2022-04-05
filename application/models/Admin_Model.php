@@ -1,5 +1,5 @@
 <?php
-class Admin extends CI_Model
+class Admin_Model extends CI_Model
 {
     public function __construct()
     {
@@ -7,7 +7,9 @@ class Admin extends CI_Model
         $this->load->database();
         $this->load->library('session');
     }
-    public function getCity()
+    public function getCategory()
     {
+        $query = $this->db->get('tbl_kategori');
+        return $query->result_array();
     }
 }

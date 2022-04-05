@@ -56,7 +56,7 @@
                                     </tr>
                                     <tr style="text-align: center;">
                                         <td colspan="6">
-                                            <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD CATEGORY</a>
+                                            <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD SERVICE DELIVERY</a>
                                         </td>
                                     </tr>
                                 </tbody>

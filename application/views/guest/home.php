@@ -20,8 +20,6 @@ $this->load->helper('url');
     <div class="container">
         <div class="row">
             <div class="col">
-                <!-- load section here -->
-                <?= $session['email']; ?>
             </div>
         </div>
     </div>

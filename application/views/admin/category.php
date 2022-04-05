@@ -30,19 +30,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            <a href="#" class="font-weight-600"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxHa-KJ-5CHqlzCizT29X2IKzUKJJWcL0EqQ&usqp=CAU" alt="avatar" width="40" height="40" style="object-fit: cover;" class="rounded-circle mr-1" />
-                                                Bagus Dwi Cahya</a>
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                            <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
+                                    <?php foreach ($category as $c) : ?>
+                                        <tr>
+                                            <td><?= $c['nama']; ?></td>
+                                            <td>
+                                                <!-- if id author = 0 show admin -->
+                                                <?php if ($c['id_author'] == 0) : ?>
+                                                    <span class="badge badge-success">Admin</span>
+                                                <?php else : ?>
+                                                    <span class="badge badge-primary">
+                                                        <?= $c['id_author']; ?>
+                                                    </span>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <a href="<?= base_url('admin/edit_category/') . $c['id']; ?>" class="btn btn-primary btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="<?= base_url('admin/edit_category/') . $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                     <tr style="text-align: center;">
                                         <td colspan="4">
                                             <a href="#" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD CATEGORY</a>

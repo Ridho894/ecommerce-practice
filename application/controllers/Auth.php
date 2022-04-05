@@ -77,7 +77,7 @@ class Auth extends CI_Controller
             redirect('auth/register');
         } else {
             $data = array(
-                'full_name' => $full_name,
+                'name' => $full_name,
                 'email' => $email,
                 'password' => $password,
             );
