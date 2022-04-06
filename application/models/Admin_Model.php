@@ -25,6 +25,11 @@ class Admin_Model extends CI_Model
     {
         $this->db->insert('tbl_kota', $data);
     }
+    public function updateCity($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_kota', $data);
+    }
     public function deleteCity($id)
     {
         $this->db->where('id', $id);

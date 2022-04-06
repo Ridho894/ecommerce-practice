@@ -104,7 +104,11 @@ class Pages extends CI_Controller
     }
     public function edit_city($id)
     {
-        echo $id;
+        $data = array(
+            'namaKota' => $this->input->post('namaKota')
+        );
+        $this->Admin_Model->updateCity($id, $data);
+        redirect('pages/delivery');
     }
     public function delete_city($id)
     {

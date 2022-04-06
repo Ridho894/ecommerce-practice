@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" autofocus name="namaKota" id="namaKota" class="form-control">
+                <input type="text" autofocus name="namaKota" placeholder="City Name" class="form-control">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger">YES</button>
@@ -20,26 +20,11 @@
     </div>
 </form>
 <!-- Modal Edit City -->
-<form method="POST" action="<?= base_url(); ?>index.php/pages/edit_city/1" class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edit City</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" name="id" id="idKota">
-                <input type="text" name="namaKota" id="namaKota" class="form-control">
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-danger">YES</button>
-                <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
-            </div>
-        </div>
+        <div id="root"></div>
     </div>
-</form>
+</div>
 <div class="navbar-bg"></div>
 <div id="app">
     <div class="main-wrapper">
@@ -196,11 +181,29 @@
 </div>
 <script>
     $(document).on("click", "#editCity", function() {
+        const root = document.getElementById('root');
         // get the data-name
         var name = $(this).data('name');
         var id = $(this).data('id');
-        console.log(id)
         $(".modal-body #namaKota").val(name);
         $("#idKota").val(id);
+        root.innerHTML = `
+    <form method="POST" action="<?= base_url(); ?>index.php/pages/edit_city/${id}" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit City</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="id" id="idKota">
+                <input type="text" name="namaKota" id="namaKota" value="${name}" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">YES</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
+            </div>
+        </form>
+    `
     });
 </script>
