@@ -17,9 +17,9 @@
                     </div>
                 </div>
             </section>
-            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_service_delivery" class="">
+            <?php var_dump($shippingCost[0]['asal']) ?>
+            <form method="POST" action="<?= base_url(); ?>index.php/pages/update_service_delivery/<?= $shippingCost[0]['id']; ?>" class="">
                 <div class="">
-                    <?php var_dump($shippingCost['namaKurir']) ?>
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group row">
@@ -27,7 +27,7 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="idKurir">
                                         <?php foreach ($courier as $c) : ?>
-                                            <option value="<?= $c['idKurir'] ?>"><?= $c['namaKurir'] ?></option>
+                                            <option selected="<?php $shippingCost[0]['namaKurir'] ?>" value="<?= $c['idKurir'] ?>"><?= $c['namaKurir'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -37,7 +37,7 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="idKotaAsal">
                                         <?php foreach ($city as $c) : ?>
-                                            <option value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
+                                            <option selected="<?php $shippingCost[0]['asal'] ?>" value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -47,7 +47,7 @@
                                 <div class="col-sm-9">
                                     <select class="form-control" name="idKotaTujuan">
                                         <?php foreach ($city as $c) : ?>
-                                            <option value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
+                                            <option selected="<?php $shippingCost[0]['tujuan'] ?>" value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -55,7 +55,7 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Ongkos</label>
                                 <div class="col-sm-9">
-                                    <input type="number" name="biaya" placeholder="Ongkos" class="form-control" id="inputPassword3" placeholder="Ongkos">
+                                    <input type="number" name="biaya" placeholder="Ongkos" class="form-control" value="<?= $shippingCost[0]['biaya'] ?>" placeholder="Ongkos">
                                 </div>
                             </div>
                         </div>

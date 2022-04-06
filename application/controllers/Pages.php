@@ -74,6 +74,7 @@ class Pages extends CI_Controller
             'title' => "Edit Delivery Services",
             'session' => $this->session->userdata(),
             'shippingCost' => $this->Admin_Model->getShippingCostByID($id),
+            'courier' => $this->Admin_Model->getCourier(),
             'city' => $this->Admin_Model->getCity(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
@@ -141,6 +142,24 @@ class Pages extends CI_Controller
         );
         $this->Admin_Model->addShippingCost($data);
         redirect('pages/delivery');
+    }
+    public function update_service_delivery($id)
+    {
+        $session = $this->session->userdata();
+        $idKurir = $this->input->post('idKurir');
+        $idKotaAsal = $this->input->post('idKotaAsal');
+        $idKotaTujuan = $this->input->post('idKotaTujuan');
+        $biaya = $this->input->post('biaya');
+        $data = array(
+            "idKurir" => $idKurir,
+            "idKotaAsal" => $idKotaAsal,
+            "idKotaTujuan" => $idKotaTujuan,
+            "biaya" => $biaya,
+            "author" => $session['name']
+        );
+
+        // $this->Admin_Model->addShippingCost($data);
+        // redirect('pages/delivery');
     }
     public function add_city()
     {

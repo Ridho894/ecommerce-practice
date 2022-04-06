@@ -26,6 +26,11 @@ class Admin_Model extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('tbl_biaya_kirim');
     }
+    public function updateServiceDelivery($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_biaya_kirim', $data);
+    }
     public function getCategory()
     {
         $query = $this->db->get('tbl_kategori');
