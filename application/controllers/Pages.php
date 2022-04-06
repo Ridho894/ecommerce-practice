@@ -102,6 +102,15 @@ class Pages extends CI_Controller
         $this->Admin_Model->addCity($data);
         redirect('pages/delivery');
     }
+    public function edit_city($id)
+    {
+        echo $id;
+    }
+    public function delete_city($id)
+    {
+        $this->Admin_Model->deleteCity($id);
+        redirect('pages/delivery');
+    }
     public function delivery()
     {
         $data = array(

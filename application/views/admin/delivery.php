@@ -20,7 +20,7 @@
     </div>
 </form>
 <!-- Modal Edit City -->
-<form method="POST" action="" class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
+<form method="POST" action="<?= base_url(); ?>index.php/pages/edit_city/1" class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -30,10 +30,11 @@
                 </button>
             </div>
             <div class="modal-body">
+                <input type="hidden" name="id" id="idKota">
                 <input type="text" name="namaKota" id="namaKota" class="form-control">
             </div>
             <div class="modal-footer">
-                <a href="<?= base_url(); ?>index.php/auth/logout" class="btn btn-danger">YES</a>
+                <button type="submit" class="btn btn-danger">YES</button>
                 <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
             </div>
         </div>
@@ -132,8 +133,8 @@
                                                 <td><?= $i; ?></td>
                                                 <td><?= $c['namaKota']; ?></td>
                                                 <td>
-                                                    <button id="editCity" type="button" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-primary"><i class="far fa-edit"></i></button>
-                                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                    <button id="editCity" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-primary"><i class="far fa-edit"></i></button>
+                                                    <a href="<?= base_url(); ?>index.php/pages/delete_city/<?= $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
                                             </tr>
@@ -197,7 +198,9 @@
     $(document).on("click", "#editCity", function() {
         // get the data-name
         var name = $(this).data('name');
-        console.log(name)
+        var id = $(this).data('id');
+        console.log(id)
         $(".modal-body #namaKota").val(name);
+        $("#idKota").val(id);
     });
 </script>
