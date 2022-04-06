@@ -85,6 +85,8 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Delivery Service",
             'session' => $this->session->userdata(),
+            'city' => $this->Admin_Model->getCity(),
+            'courier' => $this->Admin_Model->getCourier(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');

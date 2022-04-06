@@ -21,4 +21,14 @@ class Admin_Model extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete('tbl_kategori');
     }
+    public function getCity()
+    {
+        $query = $this->db->get('tbl_kota');
+        return $query->result_array();
+    }
+    public function getCourier()
+    {
+        $query = $this->db->get('tbl_kurir');
+        return $query->result_array();
+    }
 }
