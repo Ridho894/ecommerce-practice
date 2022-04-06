@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" autofocus name="namaKurir" placeholder="Courier Name" class="form-control">
+                <input required autofocus type="text" autofocus name="namaKurir" placeholder="Courier Name" class="form-control">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger">YES</button>
@@ -36,7 +36,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <input type="text" autofocus name="namaKota" placeholder="City Name" class="form-control">
+                <input required autofocus type="text" autofocus name="namaKota" placeholder="City Name" class="form-control">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger">YES</button>
