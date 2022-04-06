@@ -93,11 +93,22 @@ class Pages extends CI_Controller
         }
         $this->load->view('admin/add_service_delivery', $data);
     }
+    public function add_city()
+    {
+        $cityName = $this->input->post('namaKota');
+        $data = array(
+            'namaKota' => $cityName,
+        );
+        $this->Admin_Model->addCity($data);
+        redirect('pages/delivery');
+    }
     public function delivery()
     {
         $data = array(
             'title' => "Delivery Service",
             'session' => $this->session->userdata(),
+            'city' => $this->Admin_Model->getCity(),
+            'courier' => $this->Admin_Model->getCourier(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');

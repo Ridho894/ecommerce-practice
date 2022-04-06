@@ -1,4 +1,45 @@
 <?php $this->load->view('layouts/template'); ?>
+<!-- Modal Add City -->
+<form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/add_city" class="modal fade" id="modal_addCity" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add City</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" autofocus name="namaKota" id="namaKota" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">YES</button>
+                <button type="button" class="btn btn-warning">NO</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- Modal Edit City -->
+<form method="POST" action="" class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit City</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" name="namaKota" id="namaKota" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <a href="<?= base_url(); ?>index.php/auth/logout" class="btn btn-danger">YES</a>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="navbar-bg"></div>
 <div id="app">
     <div class="main-wrapper">
 
@@ -85,21 +126,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                Sport
-                                            </td>
-                                            <td>
-                                                Sport
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($city as $c) : ?>
+                                            <tr>
+                                                <td><?= $i; ?></td>
+                                                <td><?= $c['namaKota']; ?></td>
+                                                <td>
+                                                    <button id="editCity" type="button" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-primary"><i class="far fa-edit"></i></button>
+                                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                                <?php $i++; ?>
+                                            </tr>
+                                        <?php endforeach; ?>
                                         <tr style="text-align: center;">
                                             <td colspan="6">
-                                                <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD CITY</a>
+                                                <button type="button" data-target="#modal_addCity" data-toggle="modal" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD CITY</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -124,21 +165,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                Sport
-                                            </td>
-                                            <td>
-                                                Sport
-                                            </td>
-                                            <td>
-                                                <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                            </td>
-                                        </tr>
+                                        <?php $i = 1; ?>
+                                        <?php foreach ($courier as $c) : ?>
+                                            <tr>
+                                                <td><?= $i; ?></td>
+                                                <td><?= $c['namaKurir']; ?></td>
+                                                <td>
+                                                    <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                </td>
+                                                <?php $i++; ?>
+                                            </tr>
+                                        <?php endforeach; ?>
                                         <tr style="text-align: center;">
                                             <td colspan="6">
-                                                <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD COURIER</a>
+                                                <button type="button" data-target="#modal_addCity" data-toggle="modal" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD COURIER</button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -152,3 +193,11 @@
         <?php $this->load->view('components/footer'); ?>
     </div>
 </div>
+<script>
+    $(document).on("click", "#editCity", function() {
+        // get the data-name
+        var name = $(this).data('name');
+        console.log(name)
+        $(".modal-body #namaKota").val(name);
+    });
+</script>
