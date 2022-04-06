@@ -61,12 +61,30 @@ class Pages extends CI_Controller
             'session' => $this->session->userdata(),
             'city' => $this->Admin_Model->getCity(),
             'courier' => $this->Admin_Model->getCourier(),
-            'shippingCost' => $this->Admin_Model->get_ongkir()
+            'shippingCost' => $this->Admin_Model->getShippingCost()
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
         $this->load->view('admin/delivery', $data);
+    }
+    public function edit_service_delivery($id)
+    {
+        $data = array(
+            'title' => "Edit Delivery Services",
+            'session' => $this->session->userdata(),
+            'shippingCost' => $this->Admin_Model->getShippingCostByID($id),
+            'city' => $this->Admin_Model->getCity(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/edit_service_delivery', $data);
+    }
+    public function delete_service_delivery($id)
+    {
+        $this->Admin_Model->deleteServiceDelivery($id);
+        redirect('pages/delivery');
     }
     public function add_category()
     {
