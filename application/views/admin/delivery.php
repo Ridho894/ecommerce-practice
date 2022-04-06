@@ -19,6 +19,12 @@
         </div>
     </div>
 </form>
+<!-- Modal Edit Courier -->
+<div class="modal fade" id="modal_editCourier" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div id="edit-courier"></div>
+    </div>
+</div>
 <!-- Modal Add City -->
 <form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/add_city" class="modal fade" id="modal_addCity" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -42,7 +48,7 @@
 <!-- Modal Edit City -->
 <div class="modal fade" id="modal_editCity" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div id="root"></div>
+        <div id="edit-city"></div>
     </div>
 </div>
 <div class="navbar-bg"></div>
@@ -177,8 +183,9 @@
                                                 <td><?= $i; ?></td>
                                                 <td><?= $c['namaKurir']; ?></td>
                                                 <td>
-                                                    <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                                    <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                    <button id="editCourier" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCourier" data-name="<?= $c['namaKurir']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
+                                                    <!-- <button id="editCourier" type="button" data-target="#modal_editCourier" type=" button" class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></button> -->
+                                                    <a href="<?= base_url(); ?>index.php/pages/delete_courier/<?= $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
                                             </tr>
@@ -201,7 +208,7 @@
 </div>
 <script>
     $(document).on("click", "#editCity", function() {
-        const root = document.getElementById('root');
+        const root = document.getElementById('edit-city');
         // get the data-name
         var name = $(this).data('name');
         var id = $(this).data('id');
@@ -218,6 +225,32 @@
             <div class="modal-body">
                 <input type="hidden" name="id" id="idKota">
                 <input type="text" name="namaKota" id="namaKota" value="${name}" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">YES</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
+            </div>
+        </form>
+    `
+    });
+    $(document).on("click", "#editCourier", function() {
+        const root = document.getElementById('edit-courier');
+        // get the data-name
+        var name = $(this).data('name');
+        var id = $(this).data('id');
+        $(".modal-body #namaKurir").val(name);
+        $("#idKota").val(id);
+        root.innerHTML = `
+    <form method="POST" action="<?= base_url(); ?>index.php/pages/edit_courier/${id}" class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Courier</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" name="id" id="idKota">
+                <input type="text" name="namaKurir" id="namaKurir" value="${name}" class="form-control">
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger">YES</button>

@@ -130,6 +130,21 @@ class Pages extends CI_Controller
         $this->Admin_Model->addCourier($data);
         redirect('pages/delivery');
     }
+    public function edit_courier($id)
+    {
+        $session = $this->session->userdata();
+        $data = array(
+            'namaKurir' => $this->input->post('namaKurir'),
+            'author' => $session['name']
+        );
+        $this->Admin_Model->updateCourier($id, $data);
+        redirect('pages/delivery');
+    }
+    public function delete_courier($id)
+    {
+        $this->Admin_Model->deleteCourier($id);
+        redirect('pages/delivery');
+    }
     public function delivery()
     {
         $data = array(

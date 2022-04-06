@@ -39,6 +39,16 @@ class Admin_Model extends CI_Model
     {
         $this->db->insert('tbl_kurir', $data);
     }
+    public function updateCourier($id, $data)
+    {
+        $this->db->where('id', $id);
+        $this->db->update('tbl_kurir', $data);
+    }
+    public function deleteCourier($id)
+    {
+        $this->db->where('id', $id);
+        $this->db->delete('tbl_kurir');
+    }
     public function getCity()
     {
         $query = $this->db->get('tbl_kota');
