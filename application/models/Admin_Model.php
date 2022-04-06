@@ -7,6 +7,10 @@ class Admin_Model extends CI_Model
         $this->load->database();
         $this->load->library('session');
     }
+    public function addShippingCost($data)
+    {
+        $this->db->insert('tbl_biaya_kirim', $data);
+    }
     public function getShippingCost()
     {
         $query = $this->db->get('tbl_biaya_kirim');
@@ -32,12 +36,12 @@ class Admin_Model extends CI_Model
     }
     public function updateCity($id, $data)
     {
-        $this->db->where('id', $id);
+        $this->db->where('idKota', $id);
         $this->db->update('tbl_kota', $data);
     }
     public function deleteCity($id)
     {
-        $this->db->where('id', $id);
+        $this->db->where('idKota', $id);
         $this->db->delete('tbl_kota');
     }
     public function addCourier($data)
@@ -46,12 +50,12 @@ class Admin_Model extends CI_Model
     }
     public function updateCourier($id, $data)
     {
-        $this->db->where('id', $id);
+        $this->db->where('idKurir', $id);
         $this->db->update('tbl_kurir', $data);
     }
     public function deleteCourier($id)
     {
-        $this->db->where('id', $id);
+        $this->db->where('idKurir', $id);
         $this->db->delete('tbl_kurir');
     }
     public function getCity()
@@ -63,5 +67,10 @@ class Admin_Model extends CI_Model
     {
         $query = $this->db->get('tbl_kurir');
         return $query->result_array();
+    }
+    public function get_ongkir()
+    {
+        $q = $this->db->query("SELECT b.id, k.namaKota AS asal, j.namaKota AS tujuan, b.biaya, r.namaKurir FROM tbl_biaya_kirim b JOIN tbl_kota k ON b.idKotaAsal = k.idKota JOIN tbl_kota j ON b.idKotaTujuan = j.idKota JOIN tbl_kurir r ON b.idKurir = r.idKurir");
+        return $q->result_array();
     }
 }

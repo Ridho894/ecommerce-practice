@@ -17,16 +17,16 @@
                     </div>
                 </div>
             </section>
-            <div class="">
+            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_service_delivery" class="">
                 <div class="">
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Kurir</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control">
+                                    <select class="form-control" name="idKurir">
                                         <?php foreach ($courier as $c) : ?>
-                                            <option value="<?= $c['id'] ?>"><?= $c['namaKurir'] ?></option>
+                                            <option value="<?= $c['idKurir'] ?>"><?= $c['namaKurir'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -34,9 +34,9 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Kota Asal</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control">
+                                    <select class="form-control" name="idKotaAsal">
                                         <?php foreach ($city as $c) : ?>
-                                            <option value="<?= $c['id'] ?>"><?= $c['namaKota'] ?></option>
+                                            <option value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -44,9 +44,9 @@
                             <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Kota Tujuan</label>
                                 <div class="col-sm-9">
-                                    <select class="form-control">
+                                    <select class="form-control" name="idKotaTujuan">
                                         <?php foreach ($city as $c) : ?>
-                                            <option value="<?= $c['id'] ?>"><?= $c['namaKota'] ?></option>
+                                            <option value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Ongkos</label>
                                 <div class="col-sm-9">
-                                    <input type="number" placeholder="Ongkos" class="form-control" id="inputPassword3" placeholder="Ongkos">
+                                    <input type="number" name="biaya" placeholder="Ongkos" class="form-control" id="inputPassword3" placeholder="Ongkos">
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
         <?php $this->load->view('components/footer'); ?>
     </div>

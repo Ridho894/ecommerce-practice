@@ -61,7 +61,7 @@ class Pages extends CI_Controller
             'session' => $this->session->userdata(),
             'city' => $this->Admin_Model->getCity(),
             'courier' => $this->Admin_Model->getCourier(),
-            'shippingCost' => $this->Admin_Model->getShippingCost()
+            'shippingCost' => $this->Admin_Model->get_ongkir()
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
@@ -106,6 +106,23 @@ class Pages extends CI_Controller
             redirect('auth/login');
         }
         $this->load->view('admin/add_service_delivery', $data);
+    }
+    public function process_service_delivery()
+    {
+        $session = $this->session->userdata();
+        $idKurir = $this->input->post('idKurir');
+        $idKotaAsal = $this->input->post('idKotaAsal');
+        $idKotaTujuan = $this->input->post('idKotaTujuan');
+        $biaya = $this->input->post('biaya');
+        $data = array(
+            "idKurir" => $idKurir,
+            "idKotaAsal" => $idKotaAsal,
+            "idKotaTujuan" => $idKotaTujuan,
+            "biaya" => $biaya,
+            "author" => $session['name']
+        );
+        $this->Admin_Model->addShippingCost($data);
+        redirect('pages/delivery');
     }
     public function add_city()
     {

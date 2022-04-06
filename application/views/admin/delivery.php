@@ -89,13 +89,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i = 1; ?>
+                                    <?php
+                                    $i = 1; ?>
                                     <?php foreach ($shippingCost as $s) : ?>
                                         <tr>
                                             <td><?= $i; ?></td>
-                                            <td><?= $s['idKurir']; ?></td>
-                                            <td><?= $s['idKotaAsal']; ?></td>
-                                            <td><?= $s['idKotaTujuan']; ?></td>
+                                            <td><?= $s['namaKurir']; ?></td>
+                                            <td><?= $s['asal']; ?></td>
+                                            <td><?= $s['tujuan']; ?></td>
                                             <td><?= $s['biaya']; ?></td>
                                             <td>
                                                 <button id="editShippingCost" type="button" data-id="<?= $s['id']; ?>" data-target="#modal_shippingCost" data-name="<?= $s['id']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
@@ -138,8 +139,8 @@
                                                 <td><?= $i; ?></td>
                                                 <td><?= $c['namaKota']; ?></td>
                                                 <td>
-                                                    <button id="editCity" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
-                                                    <a href="<?= base_url(); ?>index.php/pages/delete_city/<?= $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                    <button id="editCity" type="button" data-id="<?= $c['idKota']; ?>" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
+                                                    <a href="<?= base_url(); ?>index.php/pages/delete_city/<?= $c['idKota']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
                                             </tr>
@@ -177,9 +178,8 @@
                                                 <td><?= $i; ?></td>
                                                 <td><?= $c['namaKurir']; ?></td>
                                                 <td>
-                                                    <button id="editCourier" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCourier" data-name="<?= $c['namaKurir']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
-                                                    <!-- <button id="editCourier" type="button" data-target="#modal_editCourier" type=" button" class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></button> -->
-                                                    <a href="<?= base_url(); ?>index.php/pages/delete_courier/<?= $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                    <button id="editCourier" type="button" data-id="<?= $c['idKurir']; ?>" data-target="#modal_editCourier" data-name="<?= $c['namaKurir']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
+                                                    <a href="<?= base_url(); ?>index.php/pages/delete_courier/<?= $c['idKurir']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
                                             </tr>
