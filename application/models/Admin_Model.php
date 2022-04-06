@@ -7,6 +7,11 @@ class Admin_Model extends CI_Model
         $this->load->database();
         $this->load->library('session');
     }
+    public function getShippingCost()
+    {
+        $query = $this->db->get('tbl_biaya_kirim');
+        return $query->result_array();
+    }
     public function getCategory()
     {
         $query = $this->db->get('tbl_kategori');

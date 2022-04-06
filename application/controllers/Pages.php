@@ -54,6 +54,20 @@ class Pages extends CI_Controller
         }
         $this->load->view('admin/category', $data);
     }
+    public function delivery()
+    {
+        $data = array(
+            'title' => "Delivery Service",
+            'session' => $this->session->userdata(),
+            'city' => $this->Admin_Model->getCity(),
+            'courier' => $this->Admin_Model->getCourier(),
+            'shippingCost' => $this->Admin_Model->getShippingCost()
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/delivery', $data);
+    }
     public function add_category()
     {
         $data = array(
@@ -144,19 +158,6 @@ class Pages extends CI_Controller
     {
         $this->Admin_Model->deleteCourier($id);
         redirect('pages/delivery');
-    }
-    public function delivery()
-    {
-        $data = array(
-            'title' => "Delivery Service",
-            'session' => $this->session->userdata(),
-            'city' => $this->Admin_Model->getCity(),
-            'courier' => $this->Admin_Model->getCourier(),
-        );
-        if (!isset($this->session->userdata()['is_login'])) {
-            redirect('auth/login');
-        }
-        $this->load->view('admin/delivery', $data);
     }
     public function member()
     {
