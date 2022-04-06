@@ -96,16 +96,20 @@ class Pages extends CI_Controller
     public function add_city()
     {
         $cityName = $this->input->post('namaKota');
+        $session = $this->session->userdata();
         $data = array(
             'namaKota' => $cityName,
+            'author' => $session['name']
         );
         $this->Admin_Model->addCity($data);
         redirect('pages/delivery');
     }
     public function edit_city($id)
     {
+        $session = $this->session->userdata();
         $data = array(
-            'namaKota' => $this->input->post('namaKota')
+            'namaKota' => $this->input->post('namaKota'),
+            'author' => $session['name']
         );
         $this->Admin_Model->updateCity($id, $data);
         redirect('pages/delivery');
@@ -113,6 +117,17 @@ class Pages extends CI_Controller
     public function delete_city($id)
     {
         $this->Admin_Model->deleteCity($id);
+        redirect('pages/delivery');
+    }
+    public function add_courier()
+    {
+        $session = $this->session->userdata();
+        $courierName = $this->input->post('namaKurir');
+        $data = array(
+            'namaKurir' => $courierName,
+            'author' => $session['name']
+        );
+        $this->Admin_Model->addCourier($data);
         redirect('pages/delivery');
     }
     public function delivery()

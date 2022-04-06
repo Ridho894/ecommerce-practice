@@ -1,4 +1,24 @@
 <?php $this->load->view('layouts/template'); ?>
+<!-- Modal Add Courier -->
+<form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/add_courier" class="modal fade" id="modal_addCourier" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Courier</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="text" autofocus name="namaKurir" placeholder="Courier Name" class="form-control">
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-danger">YES</button>
+                <button type="button" class="btn btn-warning">NO</button>
+            </div>
+        </div>
+    </div>
+</form>
 <!-- Modal Add City -->
 <form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/add_city" class="modal fade" id="modal_addCity" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -118,7 +138,7 @@
                                                 <td><?= $i; ?></td>
                                                 <td><?= $c['namaKota']; ?></td>
                                                 <td>
-                                                    <button id="editCity" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-primary"><i class="far fa-edit"></i></button>
+                                                    <button id="editCity" type="button" data-id="<?= $c['id']; ?>" data-target="#modal_editCity" data-name="<?= $c['namaKota']; ?>" data-toggle="modal" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></button>
                                                     <a href="<?= base_url(); ?>index.php/pages/delete_city/<?= $c['id']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                                 </td>
                                                 <?php $i++; ?>
@@ -165,7 +185,7 @@
                                         <?php endforeach; ?>
                                         <tr style="text-align: center;">
                                             <td colspan="6">
-                                                <button type="button" data-target="#modal_addCity" data-toggle="modal" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD COURIER</button>
+                                                <button type="button" data-target="#modal_addCourier" data-toggle="modal" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD COURIER</button>
                                             </td>
                                         </tr>
                                     </tbody>
