@@ -157,9 +157,8 @@ class Pages extends CI_Controller
             "biaya" => $biaya,
             "author" => $session['name']
         );
-
-        // $this->Admin_Model->addShippingCost($data);
-        // redirect('pages/delivery');
+        $this->Admin_Model->updateServiceDelivery($id, $data);
+        redirect('pages/delivery');
     }
     public function add_city()
     {
