@@ -35,6 +35,16 @@ $this->load->helper('url');
     <script src="<?php echo base_url('assets/js/custom.js') ?>"></script>
     <!-- Page Specific JS File -->
     <script src="<?php echo base_url('assets/js/page/index.js') ?>"></script>
+
+    <!-- Summernote -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#summernote').summernote();
+        });
+    </script>
 </body>
 
 </html>

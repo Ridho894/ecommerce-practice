@@ -50,6 +50,17 @@ class Pages extends CI_Controller
         );
         $this->load->view('admin/products/index', $data);
     }
+    public function add_product()
+    {
+        $data = array(
+            'title' => "Add Product",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/products/add_product', $data);
+    }
     public function category()
     {
         $data = array(

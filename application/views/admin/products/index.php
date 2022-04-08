@@ -106,7 +106,7 @@
                                     </tr>
                                     <tr style="text-align: center;">
                                         <td colspan="8">
-                                            <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD PRODUCT</a>
+                                            <a href="<?= base_url(); ?>index.php/pages/add_product" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD PRODUCT</a>
                                         </td>
                                     </tr>
                                 </tbody>
