@@ -61,7 +61,7 @@
                                                     <span class="badge badge-success">Admin</span>
                                                 <?php else : ?>
                                                     <span class="badge badge-warning">
-                                                        <?= $c['name']; ?>
+                                                        <?= $c['id_author']; ?>
                                                     </span>
                                                 <?php endif; ?>
                                             </td>

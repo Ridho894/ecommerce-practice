@@ -46,12 +46,15 @@ class Auth extends CI_Controller
                 'email' => $email,
                 'is_login' => 1,
             );
+            setcookie('user_id', $user_id->id, time() + (86400 * 30), "/");
             $this->session->set_userdata($user_data);
             redirect('pages/dashboard');
         } else {
             // set message
-            $this->session->set_flashdata('login_failed', 'Login is invalid');
+            setcookie('user_id', '', time() - 3600, "/");
             redirect('auth/login');
+            $this->session->set_flashdata('login_failed', 'Login is invalid');
+            // delete cookies
         }
     }
     public function register()

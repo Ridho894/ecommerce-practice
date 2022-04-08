@@ -42,6 +42,13 @@ class Pages extends CI_Controller
         }
         $this->load->view('admin/index', $data);
     }
+    public function products()
+    {
+        $data = array(
+            'title' => "Product"
+        );
+        $this->load->view('admin/products/index', $data);
+    }
     public function category()
     {
         $data = array(
@@ -52,7 +59,7 @@ class Pages extends CI_Controller
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/category', $data);
+        $this->load->view('admin/categories/index', $data);
     }
     public function delivery()
     {
@@ -213,15 +220,15 @@ class Pages extends CI_Controller
         $this->Admin_Model->deleteCourier($id);
         redirect('pages/delivery');
     }
-    public function member()
+    public function members()
     {
         $data = array(
-            'title' => "Member",
+            'title' => "Members",
             'session' => $this->session->userdata(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/member', $data);
+        $this->load->view('admin/members/index', $data);
     }
 }
