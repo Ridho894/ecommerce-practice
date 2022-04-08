@@ -33,7 +33,9 @@ class Admin_Model extends CI_Model
     }
     public function getCategory()
     {
-        $query = $this->db->get('tbl_kategori');
+        $session = $this->session->userdata();
+        // $query = $this->db->query("SELECT * FROM tbl_kategori WHERE id_author = '$session[user_id]'");
+        $query = $this->db->query("SELECT tbl_kategori.id_author, tbl_kategori.nama, tbl_admin.id, tbl_admin.name FROM tbl_kategori INNER JOIN tbl_admin ON tbl_kategori.id_author = tbl_admin.id WHERE tbl_admin.id = '$session[user_id]'");
         return $query->result_array();
     }
     public function addCategory($data)

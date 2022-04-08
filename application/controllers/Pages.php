@@ -99,6 +99,7 @@ class Pages extends CI_Controller
         $categoryName = $this->input->post('categoryName');
         $data_database = array(
             'nama' => $categoryName,
+            "id_author" => $this->session->userdata()['user_id'],
         );
         $this->Admin_Model->addCategory($data_database);
         redirect('pages/category', $data);

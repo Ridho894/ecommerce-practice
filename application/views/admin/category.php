@@ -27,7 +27,6 @@
         <?php $this->load->view('components/navbar_admin'); ?>
 
         <?php $this->load->view('components/sidebar'); ?>
-
         <!-- Main Content -->
         <div class="main-content">
             <section class="section">
@@ -52,7 +51,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php foreach ($category as $c) : ?>
+                                    <?php
+                                    foreach ($category as $c) : ?>
                                         <tr>
                                             <td><?= $c['nama']; ?></td>
                                             <td>
@@ -60,8 +60,8 @@
                                                 <?php if ($c['id_author'] == 0) : ?>
                                                     <span class="badge badge-success">Admin</span>
                                                 <?php else : ?>
-                                                    <span class="badge badge-primary">
-                                                        <?= $c['id_author']; ?>
+                                                    <span class="badge badge-warning">
+                                                        <?= $c['name']; ?>
                                                     </span>
                                                 <?php endif; ?>
                                             </td>
