@@ -37,7 +37,7 @@
             <li class="nav-item <?= $title === "Members" ? "active" : ""; ?>">
                 <a href="<?= base_url(); ?>index.php/pages/members" class="nav-link"><i class="fas fa-users"></i> <span>Members</span></a>
             </li>
-            <li class="nav-item <?= $title === "Product" ? "active" : ""; ?>">
+            <li class="nav-item <?= $title === "Products" ? "active" : ""; ?>">
                 <a href="<?= base_url(); ?>index.php/pages/products" class="nav-link"><i class="fas fa-shopping-cart"></i> <span>Products</span></a>
             </li>
         </ul>

@@ -14,7 +14,7 @@
             </div>
             <div class="modal-footer">
                 <button type="submit" class="btn btn-danger">YES</button>
-                <button type="button" class="btn btn-warning">NO</button>
+                <button type="button" class="btn btn-warning" data-dismiss="modal">NO</button>
             </div>
         </div>
     </div>
@@ -66,7 +66,7 @@
                     <h1>Service Delivery</h1>
                     <div class="section-header-breadcrumb">
                         <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
-                        <div class="breadcrumb-item active"><a href="#">Category</a></div>
+                        <div class="breadcrumb-item active"><a href="#"><?= $title; ?></a></div>
                     </div>
                 </div>
             </section>

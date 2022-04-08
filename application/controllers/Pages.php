@@ -45,7 +45,8 @@ class Pages extends CI_Controller
     public function products()
     {
         $data = array(
-            'title' => "Product"
+            'title' => "Products",
+            'session' => $this->session->userdata(),
         );
         $this->load->view('admin/products/index', $data);
     }
@@ -73,7 +74,7 @@ class Pages extends CI_Controller
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/delivery', $data);
+        $this->load->view('admin/deliveries/index', $data);
     }
     public function edit_service_delivery($id)
     {
@@ -87,7 +88,7 @@ class Pages extends CI_Controller
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/edit_service_delivery', $data);
+        $this->load->view('admin/deliveries/edit_service_delivery', $data);
     }
     public function delete_service_delivery($id)
     {
@@ -132,7 +133,7 @@ class Pages extends CI_Controller
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
-        $this->load->view('admin/add_service_delivery', $data);
+        $this->load->view('admin/deliveries/add_service_delivery', $data);
     }
     public function process_service_delivery()
     {
