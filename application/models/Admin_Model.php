@@ -85,4 +85,9 @@ class Admin_Model extends CI_Model
         $query = $this->db->get('tbl_kurir');
         return $query->result_array();
     }
+    public function getMembers()
+    {
+        $query = $this->db->get('tbl_member');
+        return $query->result_array();
+    }
 }

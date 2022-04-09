@@ -25,38 +25,46 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nama Kurir</th>
-                                        <th>Kota Asal</th>
-                                        <th>Kota Tujuan</th>
-                                        <th>Kota Ongkos</th>
-                                        <th>Action</th>
+                                        <th>Username</th>
+                                        <th>Nama Konsumen</th>
+                                        <th>Alamat</th>
+                                        <th>Kota</th>
+                                        <th>No Telepon</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            Sport
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                            <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
+                                    <?php
+                                    $i = 1;
+                                    foreach ($member as $m) : ?>
+                                        <tr>
+                                            <td>
+                                                <?= $i; ?>
+                                            </td>
+                                            <td>
+                                                <?= $m['username']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $m['namaKonsumen']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $m['alamat']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $m['idKota']; ?>
+                                            </td>
+                                            <td>
+                                                <?= $m['tlpn']; ?>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                     <tr style="text-align: center;">
-                                        <td colspan="6">
-                                            <a href="<?= base_url(); ?>index.php/pages/add_service_delivery" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD CATEGORY</a>
+                                        <td colspan="7">
+                                            <a href="<?= base_url(); ?>index.php/pages/add_member" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD MEMBER</a>
                                         </td>
                                     </tr>
                                 </tbody>

@@ -48,7 +48,21 @@ class Pages extends CI_Controller
             'title' => "Products",
             'session' => $this->session->userdata(),
         );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
         $this->load->view('admin/products/index', $data);
+    }
+    public function profile()
+    {
+        $data = array(
+            'title' => "Profile",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/profile/index', $data);
     }
     public function add_product()
     {
@@ -237,6 +251,7 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Members",
             'session' => $this->session->userdata(),
+            'member' => $this->Admin_Model->getMembers(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
