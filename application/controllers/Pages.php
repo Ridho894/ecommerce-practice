@@ -258,4 +258,15 @@ class Pages extends CI_Controller
         }
         $this->load->view('admin/members/index', $data);
     }
+    public function add_member()
+    {
+        $data = array(
+            'title' => "Add Members",
+            'session' => $this->session->userdata(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/members/add_member', $data);
+    }
 }
