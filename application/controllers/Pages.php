@@ -293,4 +293,16 @@ class Pages extends CI_Controller
         $this->Admin_Model->addMember($data);
         redirect('pages/members');
     }
+    public function edit_member()
+    {
+        $data = array(
+            'title' => "Edit Members",
+            'session' => $this->session->userdata(),
+            'city' => $this->Admin_Model->getCity(),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/members/edit_member', $data);
+    }
 }

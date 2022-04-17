@@ -17,7 +17,7 @@
                     </div>
                 </div>
             </section>
-            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_add_member" class="">
+            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_edit_member" class="">
                 <div class="">
                     <div class="card">
                         <div class="card-body">
@@ -79,7 +79,7 @@
                         </div>
                         <div class="card-footer">
                             <button type="submit" class="btn btn-warning">
-                                ADD
+                                UPDATE
                             </button>
                             <a href="<?= base_url(); ?>index.php/pages/members" class="btn btn-danger">
                                 CANCEL
