@@ -263,10 +263,34 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Add Members",
             'session' => $this->session->userdata(),
+            'city' => $this->Admin_Model->getCity(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
         $this->load->view('admin/members/add_member', $data);
+    }
+    public function process_add_member()
+    {
+        $username = $this->input->post('username');
+        $namaKonsumen = $this->input->post('namaKonsumen');
+        $password = $this->input->post('password');
+        $alamat = $this->input->post('alamat');
+        $kota = $this->input->post('kota');
+        $email = $this->input->post('email');
+        $tlpn = $this->input->post('tlpn');
+        $statusAktif = $this->input->post('statusAktif');
+        $data = array(
+            "username" => $username,
+            "password" => $password,
+            "namaKonsumen" => $namaKonsumen,
+            "alamat" => $alamat,
+            "idKota" => $kota,
+            "email" => $email,
+            "tlpn" => $tlpn,
+            "statusAktif" => $statusAktif
+        );
+        $this->Admin_Model->addMember($data);
+        redirect('pages/members');
     }
 }

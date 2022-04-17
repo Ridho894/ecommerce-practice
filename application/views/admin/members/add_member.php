@@ -34,6 +34,16 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-3 col-form-label">Kota</label>
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="kota">
+                                        <?php foreach ($city as $c) : ?>
+                                            <option value="<?= $c['idKota'] ?>"><?= $c['namaKota'] ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="inputEmail3" class="col-sm-3 col-form-label">Alamat</label>
                                 <div class="col-sm-9">
                                     <input type="text" name="alamat" placeholder="Alamat" class="form-control">
@@ -46,6 +56,12 @@
                                 </div>
                             </div>
                             <div class="form-group row">
+                                <label for="inputPassword3" class="col-sm-3 col-form-label">Password</label>
+                                <div class="col-sm-9">
+                                    <input type="password" name="password" placeholder="Password" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">No Telepon</label>
                                 <div class="col-sm-9">
                                     <input type="number" name="tlpn" placeholder="Nomor Telepon" class="form-control">
@@ -54,10 +70,10 @@
                             <div class="form-group row">
                                 <label for="inputPassword3" class="col-sm-3 col-form-label">Status</label>
                                 <div class="col-sm-9">
-                                    <input type="checkbox" name="aktif">
-                                    <label for="aktif">Aktif</label>
-                                    <input type="checkbox" name="nonaktif">
-                                    <label for="nonaktif">Nonaktif</label>
+                                    <select name="statusAktif">
+                                        <option value="Y">AKTIF</option>
+                                        <option value="N">NONAKTIF</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>

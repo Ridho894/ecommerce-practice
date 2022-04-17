@@ -7,6 +7,10 @@ class Admin_Model extends CI_Model
         $this->load->database();
         $this->load->library('session');
     }
+    public function addMember($data)
+    {
+        $this->db->insert('tbl_member', $data);
+    }
     public function addShippingCost($data)
     {
         $this->db->insert('tbl_biaya_kirim', $data);
