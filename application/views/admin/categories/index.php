@@ -56,12 +56,11 @@
                                         <tr>
                                             <td><?= $c['nama']; ?></td>
                                             <td>
-                                                <!-- if id author = 0 show admin -->
                                                 <?php if ($c['id_author'] == 0) : ?>
                                                     <span class="badge badge-success">Admin</span>
                                                 <?php else : ?>
                                                     <span class="badge badge-warning">
-                                                        <?= $c['id_author']; ?>
+                                                        <?= $this->db->get_where('tbl_admin', ['id' => $c['id_author']])->row_array()['name']; ?>
                                                     </span>
                                                 <?php endif; ?>
                                             </td>

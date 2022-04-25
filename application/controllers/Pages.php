@@ -293,7 +293,7 @@ class Pages extends CI_Controller
         $this->Admin_Model->addMember($data);
         redirect('pages/members');
     }
-    public function edit_member()
+    public function edit_member($id)
     {
         $data = array(
             'title' => "Edit Members",
@@ -304,5 +304,29 @@ class Pages extends CI_Controller
             redirect('auth/login');
         }
         $this->load->view('admin/members/edit_member', $data);
+    }
+    public function process_edit_member()
+    {
+        $id = $this->input->post('id');
+        $username = $this->input->post('username');
+        $namaKonsumen = $this->input->post('namaKonsumen');
+        $password = $this->input->post('password');
+        $alamat = $this->input->post('alamat');
+        $kota = $this->input->post('kota');
+        $email = $this->input->post('email');
+        $tlpn = $this->input->post('tlpn');
+        $statusAktif = $this->input->post('statusAktif');
+        $data = array(
+            "username" => $username,
+            "password" => $password,
+            "namaKonsumen" => $namaKonsumen,
+            "alamat" => $alamat,
+            "idKota" => $kota,
+            "email" => $email,
+            "tlpn" => $tlpn,
+            "statusAktif" => $statusAktif
+        );
+        $this->Admin_Model->updateMember($id, $data);
+        redirect('pages/members');
     }
 }

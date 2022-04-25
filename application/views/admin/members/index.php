@@ -31,7 +31,7 @@
                                         <th>Kota</th>
                                         <th>No Telepon</th>
                                         <th>Status</th>
-                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -59,13 +59,13 @@
                                             </td>
                                             <td>
                                                 <?php if ($m['statusAktif'] === "Y") : ?>
-                                                    AKTIF
+                                                    <span class="badge badge-primary">AKTIF</span>
                                                 <?php else : ?>
                                                     NONAKTIF
                                                 <?php endif; ?>
                                             </td>
                                             <td>
-                                                <a href="<?= base_url(); ?>index.php/pages/edit_member" class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="<?= base_url(); ?>index.php/pages/edit_member/<?= $m['idKonsumen']; ?>" class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
                                                 <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
