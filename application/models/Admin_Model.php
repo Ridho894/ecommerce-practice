@@ -99,4 +99,9 @@ class Admin_Model extends CI_Model
         $this->db->where('id', $id);
         $this->db->update('tbl_member', $data);
     }
+    public function getMembersById($id)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_member WHERE idKonsumen = '$id'");
+        return $query->result_array();
+    }
 }

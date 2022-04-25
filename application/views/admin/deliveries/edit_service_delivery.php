@@ -17,7 +17,6 @@
                     </div>
                 </div>
             </section>
-            <?php var_dump($shippingCost[0]['asal']) ?>
             <form method="POST" action="<?= base_url(); ?>index.php/pages/update_service_delivery/<?= $shippingCost[0]['id']; ?>" class="">
                 <div class="">
                     <div class="card">
