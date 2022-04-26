@@ -19,8 +19,10 @@
             </section>
             <form method="POST" action="<?= base_url(); ?>index.php/pages/process_edit_member" class="">
                 <!-- Loop member -->
-                <?php foreach ($member as $m) : ?>
+                <?php
+                foreach ($member as $m) : ?>
                     <div class="">
+                        <input type="hidden" name="idKonsumen" value="<?= $m['idKonsumen']; ?>">
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group row">

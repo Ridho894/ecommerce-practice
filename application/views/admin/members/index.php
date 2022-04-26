@@ -66,7 +66,7 @@
                                             </td>
                                             <td>
                                                 <a href="<?= base_url(); ?>index.php/pages/edit_member/<?= $m['idKonsumen']; ?>" class="btn btn-warning btn-action mr-1" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                                                <a class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                                <a href="<?= base_url(); ?>index.php/pages/delete_member/<?= $m['idKonsumen']; ?>" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

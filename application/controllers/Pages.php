@@ -270,6 +270,11 @@ class Pages extends CI_Controller
         }
         $this->load->view('admin/members/add_member', $data);
     }
+    public function delete_member($id)
+    {
+        $this->Admin_Model->deleteMember($id);
+        redirect('pages/members');
+    }
     public function process_add_member()
     {
         $username = $this->input->post('username');
@@ -308,7 +313,7 @@ class Pages extends CI_Controller
     }
     public function process_edit_member()
     {
-        $id = $this->input->post('id');
+        $idKonsumen = $this->input->post('idKonsumen');
         $username = $this->input->post('username');
         $namaKonsumen = $this->input->post('namaKonsumen');
         $password = $this->input->post('password');
@@ -327,7 +332,7 @@ class Pages extends CI_Controller
             "tlpn" => $tlpn,
             "statusAktif" => $statusAktif
         );
-        $this->Admin_Model->updateMember($id, $data);
+        $this->Admin_Model->updateMember($idKonsumen, $data);
         redirect('pages/members');
     }
 }

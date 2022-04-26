@@ -96,8 +96,13 @@ class Admin_Model extends CI_Model
     }
     public function updateMember($id, $data)
     {
-        $this->db->where('id', $id);
+        $this->db->where('idKonsumen', $id);
         $this->db->update('tbl_member', $data);
+    }
+    public function deleteMember($id)
+    {
+        $this->db->where('idKonsumen', $id);
+        $this->db->delete('tbl_member');
     }
     public function getMembersById($id)
     {
