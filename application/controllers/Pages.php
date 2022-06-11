@@ -7,7 +7,8 @@ class Pages extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin_Model');
-        $this->load->helper('url');
+        $this->load->helper('url', 'form');
+        $this->load->library('form_validation');
     }
     /**
      * Index Page for this controller.
@@ -69,11 +70,56 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Add Product",
             'session' => $this->session->userdata(),
+            'category' => $this->Admin_Model->getCategory(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
         }
         $this->load->view('admin/products/add_product', $data);
+    }
+    public function process_add_product()
+    {
+        $nama = $this->input->post('nama');
+        $harga = $this->input->post('harga');
+        $stok = $this->input->post('stok');
+        $berat = $this->input->post('berat');
+        $kategori = $this->input->post('kategori');
+        $deskripsi = $this->input->post('deskripsi');
+        $foto = $this->input->post('foto');
+        $data = array(
+            "idProduk" => 1,
+            "idkat" => $kategori,
+            "idToko" => 1,
+            "namaProduk" => $nama,
+            "harga" => $harga,
+            "stok" => $stok,
+            "berat" => $berat,
+            "deskripsiProduk" => $deskripsi,
+            "foto" => $foto,
+        );
+        $this->Admin_Model->addProduct($data);
+        redirect('pages/delivery');
+        // $config['upload_path'] = './upload/';
+        // $config['allowed_types'] = 'gif|jpg|png';
+        // $config['max_size'] = 2000;
+
+        // $this->load->library('upload', $config);
+
+        // if (!$this->upload->do_upload('image')) {
+        //     $error = array(
+        //         'error' => $this->upload->display_errors(),
+        //         'title' => ''
+        //     );
+
+        //     $this->load->view('admin/products/add_product', $error);
+        // } else {
+        //     $data = array(
+        //         'image_metadata' => $this->upload->data(),
+        //         'title' => ''
+        //     );
+
+        //     $this->load->view('admin/products/index', $data);
+        // }
     }
     public function category()
     {

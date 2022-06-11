@@ -2,10 +2,10 @@
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
             <img src="<?php echo base_url('assets/img/logo.png'); ?>" width="35" alt="image">
-            <a href="index.html">Ecommerce</a>
+            <a href="<?= base_url(); ?>index.php/pages/dashboard">Ecommerce</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">RD</a>
+            <a href="<?= base_url(); ?>index.php/pages/dashboard">RD</a>
         </div>
         <ul class="sidebar-menu">
             <li class="nav-item <?= $title === "Dashboard" ? "active" : ""; ?>">
@@ -17,23 +17,6 @@
             <li class="nav-item <?= $title === "Delivery Service" ? "active" : ""; ?>">
                 <a href="<?= base_url(); ?>index.php/pages/delivery" class="nav-link"><i class="fas fa-paper-plane"></i> <span>Service Delivery</span></a>
             </li>
-            <!-- <li class="nav-item dropdown">
-                <a href="#" class="nav-link has-dropdown"><i class="fas fa-paper-plane"></i> <span>Service Delivery</span></a>
-                <ul class="dropdown-menu">
-                    <li>
-                        <a class="nav-link" href="bootstrap-alert.html">Jnt</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="bootstrap-badge.html">Jne</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="bootstrap-breadcrumb.html">SiCepat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url(); ?>index.php/pages/add_service_delivery">ADD SERVICE DELIVERY</a>
-                    </li>
-                </ul>
-            </li> -->
             <li class="nav-item <?= $title === "Members" ? "active" : ""; ?>">
                 <a href="<?= base_url(); ?>index.php/pages/members" class="nav-link"><i class="fas fa-users"></i> <span>Members</span></a>
             </li>

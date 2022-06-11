@@ -61,7 +61,9 @@
                                                 <?php if ($m['statusAktif'] === "Y") : ?>
                                                     <span class="badge badge-primary">AKTIF</span>
                                                 <?php else : ?>
-                                                    NONAKTIF
+                                                    <span class="badge badge-danger">
+                                                        NONAKTIF
+                                                    </span>
                                                 <?php endif; ?>
                                             </td>
                                             <td>
