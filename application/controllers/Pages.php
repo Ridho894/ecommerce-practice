@@ -48,6 +48,7 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Products",
             'session' => $this->session->userdata(),
+            'products' => $this->Admin_Model->getProduct(),
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
@@ -86,8 +87,17 @@ class Pages extends CI_Controller
         $kategori = $this->input->post('kategori');
         $deskripsi = $this->input->post('deskripsi');
         $foto = $this->input->post('foto');
+
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['max_size'] = 2000;
+        $this->load->library('upload', $config);
+        if (!$this->upload->do_upload('foto')) {
+            echo "Gagal Upload";
+        } else {
+            $foto = $this->upload->data('file_name');
+        }
         $data = array(
-            "idProduk" => 1,
             "idkat" => $kategori,
             "idToko" => 1,
             "namaProduk" => $nama,
@@ -99,27 +109,6 @@ class Pages extends CI_Controller
         );
         $this->Admin_Model->addProduct($data);
         redirect('pages/delivery');
-        // $config['upload_path'] = './upload/';
-        // $config['allowed_types'] = 'gif|jpg|png';
-        // $config['max_size'] = 2000;
-
-        // $this->load->library('upload', $config);
-
-        // if (!$this->upload->do_upload('image')) {
-        //     $error = array(
-        //         'error' => $this->upload->display_errors(),
-        //         'title' => ''
-        //     );
-
-        //     $this->load->view('admin/products/add_product', $error);
-        // } else {
-        //     $data = array(
-        //         'image_metadata' => $this->upload->data(),
-        //         'title' => ''
-        //     );
-
-        //     $this->load->view('admin/products/index', $data);
-        // }
     }
     public function category()
     {

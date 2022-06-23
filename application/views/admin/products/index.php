@@ -91,19 +91,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>Hello</td>
-                                        <td>
-                                            <a href="" id="editShippingCost" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></a>
-                                            <a href="" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
-                                        </td>
-                                    </tr>
+                                    <?php $i = 1; ?>
+                                    <?php
+                                    foreach ($products as $p) :
+                                    ?>
+                                        <tr>
+                                            <td><?= $i; ?></td>
+                                            <td><?= $p['namaProduk']; ?></td>
+                                            <td><?= $p['idKat']; ?></td>
+                                            <td><?= $p['foto']; ?></td>
+                                            <td><?= $p['harga']; ?></td>
+                                            <td><?= $p['stok']; ?></td>
+                                            <td><?= $p['berat']; ?></td>
+                                            <td>
+                                                <a href="" id="editShippingCost" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                     <tr style="text-align: center;">
                                         <td colspan="8">
                                             <a href="<?= base_url(); ?>index.php/pages/add_product" class="btn btn-icon icon-left btn-primary"><i class="far fa-edit"></i> ADD PRODUCT</a>

@@ -117,15 +117,15 @@
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Picture</label>
                                 <div class="col-sm-12 col-md-7">
                                     <div id="image-preview" class="">
-                                        <label for="image-upload" id="image-label">Choose File</label>
-                                        <input type="file" name="foto" size="20" id="image-upload" />
+                                        <label>Choose File</label>
+                                        <input type="file" name="foto" />
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                 <div class="col-sm-12 col-md-7">
-                                    <button class="btn btn-primary">Create Product</button>
+                                    <button type="submit" class="btn btn-primary">Create Product</button>
                                 </div>
                             </div>
                         </div>
