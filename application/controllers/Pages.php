@@ -88,14 +88,18 @@ class Pages extends CI_Controller
         $deskripsi = $this->input->post('deskripsi');
         $foto = $this->input->post('foto');
 
-        $config['upload_path'] = './uploads/';
-        $config['allowed_types'] = 'gif|jpg|png';
-        $config['max_size'] = 2000;
-        $this->load->library('upload', $config);
-        if (!$this->upload->do_upload('foto')) {
-            echo "Gagal Upload";
+        $gambar = $_FILES['foto']['name'];
+        if ($gambar = '') {
         } else {
-            $foto = $this->upload->data('file_name');
+            $config['upload_path'] = './uploads';
+            $config['allowed_types'] = 'jpg|jpeg|png|gift';
+
+            $this->load->library('upload', $config);
+            if (!$this->upload->do_upload('foto')) {
+                echo "Gambar Gagal Di Upload !";
+            } else {
+                $gambar = $this->upload->data('file_name');
+            }
         }
         $data = array(
             "idkat" => $kategori,
@@ -105,10 +109,10 @@ class Pages extends CI_Controller
             "stok" => $stok,
             "berat" => $berat,
             "deskripsiProduk" => $deskripsi,
-            "foto" => $foto,
+            "foto" => $gambar,
         );
         $this->Admin_Model->addProduct($data);
-        redirect('pages/delivery');
+        redirect('pages/products');
     }
     public function category()
     {

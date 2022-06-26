@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </section>
-            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row">
+            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row" enctype="multipart/form-data">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
@@ -125,7 +125,7 @@
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
                                 <div class="col-sm-12 col-md-7">
-                                    <button type="submit" class="btn btn-primary">Create Product</button>
+                                    <button type="submit" value="upload" class="btn btn-primary">Create Product</button>
                                 </div>
                             </div>
                         </div>
