@@ -1,3 +1,5 @@
+<!-- THIS IS BOOTSTRAP DEFAULT TEMPLATE -->
+
 <?php
 $this->load->helper('url');
 ?>

@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </section>
-            <form method="POST" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row" enctype="multipart/form-data">
+            <form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row" enctype="multipart/form-data">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">

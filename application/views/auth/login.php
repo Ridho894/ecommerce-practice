@@ -45,13 +45,6 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" name="remember" class="custom-control-input" tabindex="3" id="remember-me">
-                                        <label class="custom-control-label" for="remember-me">Remember Me</label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-lg btn-block" tabindex="4">
                                         Login
                                     </button>
@@ -62,8 +55,8 @@
                             </form>
                         </div>
                     </div>
-                    <div class="simple-footer" style="cursor: pointer;" onclick="window.open('https://rd-portofolio.vercel.app/')">
-                        Copyright &copy; RD - Production 2022
+                    <div class="simple-footer" style="cursor: pointer;" onclick="window.open('https://rdplatform.tech/')">
+                        Copyright &copy; RD - Platform 2022
                     </div>
                 </div>
             </div>

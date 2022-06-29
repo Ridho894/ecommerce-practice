@@ -99,7 +99,10 @@
                                             <td><?= $i; ?></td>
                                             <td><?= $p['namaProduk']; ?></td>
                                             <td><?= $p['idKat']; ?></td>
-                                            <td><?= $p['foto']; ?></td>
+                                            <td>
+                                                <?= $p['foto']; ?>
+                                                <img src="<?php echo base_url(`uploads/{$p['foto']}`) ?>" style="width: 100px; height: 100px;" alt=".img">
+                                            </td>
                                             <td><?= $p['harga']; ?></td>
                                             <td><?= $p['stok']; ?></td>
                                             <td><?= $p['berat']; ?></td>
