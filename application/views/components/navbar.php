@@ -9,10 +9,27 @@ $this->load->view('layouts/tailwind_template');
             <a href="" class="<?= $title === "About" ? 'bg-red-900' : ''; ?>">About</a>
             <a href="">Review</a>
         </div>
-        <div>
+        <div class="flex space-x-3">
+            <form class="w-full max-w-xs" action="">
+                <div class="flex relative items-center border border-gray-300 rounded-lg shadow-lg">
+                    <input class="w-full bg-gray-100 rounded-lg outline-none pl-4 py-2" type="text" placeholder="Search">
+                    <button class="flex
+                    absolute
+                    right-4
+                        items-center
+                        justify-center
+                        h-full
+                        rounded-lg
+                        text-gray-700">
+                        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
             <?php if ($this->session->userdata('is_login')) : ?>
-                <a href="<?= base_url(); ?>index.php/pages/dashboard" class="border-white border-2 text-white px-4 p-2 rounded-lg">My Store</a>
-                <a href="<?= base_url(); ?>index.php/pages/dashboard" class="border-white border-2 text-white px-4 p-2 rounded-lg">Logout</a>
+                <a href="<?= base_url(); ?>index.php/pages/dashboard" class="border-white border-2 w-40 text-center text-white px-4 p-2 rounded-lg">My Store</a>
+                <a href="<?= base_url(); ?>index.php/pages/dashboard" class="border-white border-2 w-40 text-center text-white px-4 p-2 rounded-lg">Logout</a>
             <?php else : ?>
                 <a href="<?= base_url(); ?>index.php/auth/login" class="btn btn-primary" type="button">LOGIN</a>
                 <a href="<?= base_url(); ?>index.php/auth/register" class="btn btn-danger ml-3" type="button">REGISTER</a>
@@ -20,32 +37,3 @@ $this->load->view('layouts/tailwind_template');
         </div>
     </div>
 </header>
-<!-- <nav class="navbarHome navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">Ecommerce</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item <?= $title === "Home" ? 'active' : ''; ?>">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                <li class="nav-item <?= $title === "About" ? 'active' : ''; ?>">
-                    <a class="nav-link" href="/pages/about">About</a>
-                </li>
-                <li class="nav-item <?= $title === "Review" ? 'active' : ''; ?>">
-                    <a class="nav-link" href="/pages/review">Review</a>
-                </li>
-            </ul>
-            <div>
-                <?php if ($this->session->userdata('is_login')) : ?>
-                    <a href="<?= base_url(); ?>index.php/pages/dashboard" class="btn btn-outline-primary">My Store</a>
-                <?php else : ?>
-                    <a href="<?= base_url(); ?>index.php/auth/login" class="btn btn-primary" type="button">LOGIN</a>
-                    <a href="<?= base_url(); ?>index.php/auth/register" class="btn btn-danger ml-3" type="button">REGISTER</a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</nav> -->
