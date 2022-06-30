@@ -91,7 +91,7 @@ class Pages extends CI_Controller
         $gambar = $_FILES['foto']['name'];
         if ($gambar = '') {
         } else {
-            $config['upload_path'] = './uploads';
+            $config['upload_path'] = './assets/uploads';
             $config['allowed_types'] = 'jpg|jpeg|png|gift';
 
             $this->load->library('upload', $config);

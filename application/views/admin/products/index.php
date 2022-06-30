@@ -100,8 +100,7 @@
                                             <td><?= $p['namaProduk']; ?></td>
                                             <td><?= $p['idKat']; ?></td>
                                             <td>
-                                                <?= $p['foto']; ?>
-                                                <img src="<?php echo base_url(`uploads/{$p['foto']}`) ?>" style="width: 100px; height: 100px;" alt=".img">
+                                                <img src="<?= base_url('assets/uploads/' . $p['foto']); ?>" alt="<?= $p['foto']; ?>" width="75px">
                                             </td>
                                             <td><?= $p['harga']; ?></td>
                                             <td><?= $p['stok']; ?></td>
