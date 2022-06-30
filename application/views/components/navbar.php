@@ -10,7 +10,7 @@ $this->load->view('layouts/tailwind_template');
             <a href="">Review</a>
         </div>
         <div class="flex items-center space-x-2">
-            <a href="#" class="bg-white rounded-lg h-10 flex items-center justify-center w-20 text-center pr-1">
+            <a href="<?= base_url(); ?>index.php/pages/checkout" class="bg-white rounded-lg h-10 flex items-center justify-center w-20 text-center pr-1">
                 <i class="fas fa-shopping-bag text-[#6777ef]"></i>
             </a>
             <form class="w-full max-w-xs" action="">

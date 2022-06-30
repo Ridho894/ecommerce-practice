@@ -374,4 +374,12 @@ class Pages extends CI_Controller
         $this->Admin_Model->updateMember($idKonsumen, $data);
         redirect('pages/members');
     }
+    public function checkout()
+    {
+        $data = array(
+            'title' => "Checkout",
+            'products' => $this->Admin_Model->getProduct(),
+        );
+        $this->load->view('guest/checkout', $data);
+    }
 }
