@@ -73,6 +73,20 @@ $this->load->view('layouts/template');
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur
             </p>
+            <div class="flex flex-wrap space-x-4">
+
+                <?php
+                foreach ($products as $p) :
+                ?>
+                    <div class="bg-white rounded-lg shadow-md w-[200px]">
+                        <img src="<?= base_url('assets/uploads/' . $p['foto']); ?>" alt="<?= $p['foto']; ?>" width="75px">
+                        <div class="p-4">
+
+                            <h1><?= $p['namaProduk']; ?></h1>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 </body>

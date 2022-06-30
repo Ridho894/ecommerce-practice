@@ -32,6 +32,11 @@ class Auth extends CI_Controller
         $data['title'] = 'Login';
         $this->load->view('auth/login', $data);
     }
+    public function login_member()
+    {
+        $data['title'] = 'Login Member';
+        $this->load->view('auth/login_member', $data);
+    }
     public function login_user()
     {
         $email = $this->input->post('email');

@@ -29,6 +29,7 @@ class Pages extends CI_Controller
     {
         $data = array(
             'title' => "Home",
+            'products' => $this->Admin_Model->getProduct(),
         );
         $this->load->view('guest/home', $data);
     }
@@ -86,7 +87,6 @@ class Pages extends CI_Controller
         $berat = $this->input->post('berat');
         $kategori = $this->input->post('kategori');
         $deskripsi = $this->input->post('deskripsi');
-        $foto = $this->input->post('foto');
 
         $gambar = $_FILES['foto']['name'];
         if ($gambar = '') {
