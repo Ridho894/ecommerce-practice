@@ -89,7 +89,7 @@ $this->load->view('layouts/template');
             </div>
             <div class="mt-6 flex justify-center text-center text-sm text-gray-500">
                 <p>
-                    or <button type="button" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></button>
+                    or <a href="<?= base_url(); ?>index.php/pages" class="font-medium text-indigo-600 hover:text-indigo-500">Continue Shopping<span aria-hidden="true"> &rarr;</span></a>
                 </p>
             </div>
         </div>

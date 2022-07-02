@@ -374,6 +374,18 @@ class Pages extends CI_Controller
         $this->Admin_Model->updateMember($idKonsumen, $data);
         redirect('pages/members');
     }
+    public function detail_product($id)
+    {
+        $data = array(
+            'title' => "Detail Product",
+            'session' => $this->session->userdata(),
+            // 'product' => $this->Admin_Model->getProductById($id)
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('guest/detail_product', $data);
+    }
     public function checkout()
     {
         $data = array(

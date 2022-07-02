@@ -14,7 +14,7 @@ $this->load->view('layouts/template');
     <title>Hello, world!</title>
 </head>
 
-<body>
+<body class="overflow-x-hidden">
     <?php $this->load->view('components/navbar'); ?>
     <div class="mx-auto max-w-6xl py-4 space-y-6">
         <!-- CAROUSEL -->
@@ -74,17 +74,18 @@ $this->load->view('layouts/template');
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel consectetur
             </p>
             <div class="flex flex-wrap space-x-4">
-
                 <?php
                 foreach ($products as $p) :
                 ?>
-                    <div class="bg-white rounded-lg shadow-md w-[200px]">
-                        <img src="<?= base_url('assets/uploads/' . $p['foto']); ?>" alt="<?= $p['foto']; ?>" width="75px">
-                        <div class="p-4">
+                    <a href="<?= base_url('index.php/pages/detail_product/' . $p['idProduk']); ?>">
+                        <div class="bg-white rounded-lg shadow-md w-[200px]">
+                            <img src="<?= base_url('assets/uploads/' . $p['foto']); ?>" alt="<?= $p['foto']; ?>" width="75px">
+                            <div class="p-4">
 
-                            <h1><?= $p['namaProduk']; ?></h1>
+                                <h1><?= $p['namaProduk']; ?></h1>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 <?php endforeach; ?>
             </div>
         </div>
