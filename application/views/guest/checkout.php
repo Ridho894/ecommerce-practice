@@ -3,17 +3,6 @@ $this->load->helper('url');
 $this->load->view('layouts/template');
 ?>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Hello, world!</title>
-</head>
-
 <body class="bg-gray-100">
     <?php $this->load->view('components/navbar'); ?>
     <section class="mx-auto max-w-6xl py-4 space-y-6">
