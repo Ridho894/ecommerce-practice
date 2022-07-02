@@ -7,6 +7,7 @@ class Pages extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Admin_Model');
+        $this->load->model('Member_Model');
         $this->load->helper('url', 'form');
         $this->load->library('form_validation');
     }
@@ -379,7 +380,7 @@ class Pages extends CI_Controller
         $data = array(
             'title' => "Detail Product",
             'session' => $this->session->userdata(),
-            // 'product' => $this->Admin_Model->getProductById($id)
+            'product' => $this->Member_Model->getProductById($id)
         );
         if (!isset($this->session->userdata()['is_login'])) {
             redirect('auth/login');
