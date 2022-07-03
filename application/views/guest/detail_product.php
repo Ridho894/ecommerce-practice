@@ -1,6 +1,20 @@
 <?php
 $this->load->helper('url');
-$this->load->view('layouts/tailwind_template');
+$this->load->view('layouts/template');
+?>
+
+<?php
+foreach ($product as $p) {
+    $idProduk = $p['idProduk'];
+    $namaProduk = $p['namaProduk'];
+    $harga = $p['harga'];
+    $stok = $p['stok'];
+    $berat = $p['berat'];
+    $deskripsiProduk = $p['deskripsiProduk'];
+    $foto = $p['foto'];
+    $idKategori = $p['idKat'];
+    $idToko = $p['idToko'];
+}
 ?>
 
 <body class="overflow-x-hidden">
@@ -27,7 +41,7 @@ $this->load->view('layouts/tailwind_template');
         <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6">
             <div class="border-b border-gray-200 pb-6">
                 <p class="text-sm leading-none text-gray-600 dark:text-gray-300 ">Balenciaga Fall Collection</p>
-                <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2">Balenciaga Signature Sweatshirt</h1>
+                <h1 class="lg:text-2xl text-xl font-semibold lg:leading-6 leading-7 text-gray-800 dark:text-white mt-2"><?= $namaProduk; ?></h1>
             </div>
             <div class="py-4 border-b border-gray-200 flex items-center justify-between">
                 <p class="text-base leading-4 text-gray-800 dark:text-gray-300">Colours</p>
@@ -47,17 +61,14 @@ $this->load->view('layouts/tailwind_template');
                     <img class="hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/productDetail3-svg2dark.svg" alt="next">
                 </div>
             </div>
-            <button class="dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-base flex items-center justify-center leading-none text-white bg-gray-800 w-full py-4 hover:bg-gray-700 focus:outline-none">
-                <img class="mr-3 dark:hidden" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/svg1.svg" alt="location">
-                <img class="mr-3 hidden dark:block" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/svg1dark.svg" alt="location">
-                Check availability in store
+            <button class="dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 text-sm flex justify-center leading-none text-white bg-gray-800 w-full py-3 hover:bg-gray-700 focus:outline-none">
+                <i class="fas fa-shopping-bag text-white mr-2"></i>
+                Add to Cart
             </button>
             <div>
-                <p class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7">It is a long established fact that a reader will be distracted by thereadable content of a page when looking at its layout. The point of usingLorem Ipsum is that it has a more-or-less normal distribution of letters.</p>
-                <p class="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">Product Code: 8BN321AF2IF0NYA</p>
-                <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Length: 13.2 inches</p>
-                <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Height: 10 inches</p>
-                <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Depth: 5.1 inches</p>
+                <p class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 dark:text-gray-300 mt-7"><?= $deskripsiProduk; ?></p>
+                <p class="text-base leading-4 mt-7 text-gray-600 dark:text-gray-300">Product Code: <?= $idProduk; ?></p>
+                <p class="text-base leading-4 mt-4 text-gray-600 dark:text-gray-300">Weight: <?= $berat; ?> inches</p>
                 <p class="md:w-96 text-base leading-normal text-gray-600 dark:text-gray-300 mt-4">Composition: 100% calf leather, inside: 100% lamb leather</p>
             </div>
             <div>

@@ -5,7 +5,7 @@ $this->load->view('layouts/tailwind_template');
 <header class="top-0 w-screen bg-[#6777ef] py-3 transition-all duration-200 ease-in">
     <div class="mx-auto flex items-center max-w-6xl justify-between">
         <div class="space-x-10 text-white">
-            <a href="">Home</a>
+            <a href="<?= base_url(); ?>index.php/pages/">Home</a>
             <a href="" class="<?= $title === "About" ? 'bg-red-900' : ''; ?>">About</a>
             <a href="">Review</a>
         </div>

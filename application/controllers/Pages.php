@@ -382,9 +382,6 @@ class Pages extends CI_Controller
             'session' => $this->session->userdata(),
             'product' => $this->Member_Model->getProductById($id)
         );
-        if (!isset($this->session->userdata()['is_login'])) {
-            redirect('auth/login');
-        }
         $this->load->view('guest/detail_product', $data);
     }
     public function checkout()
