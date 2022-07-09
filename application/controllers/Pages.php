@@ -115,6 +115,19 @@ class Pages extends CI_Controller
         $this->Admin_Model->addProduct($data);
         redirect('pages/products');
     }
+    public function edit_product($id)
+    {
+        $data = array(
+            'title' => "Edit Product",
+            'session' => $this->session->userdata(),
+            'category' => $this->Admin_Model->getCategory(),
+            'product' => $this->Admin_Model->getProductById($id),
+        );
+        if (!isset($this->session->userdata()['is_login'])) {
+            redirect('auth/login');
+        }
+        $this->load->view('admin/products/edit_product', $data);
+    }
     public function category()
     {
         $data = array(

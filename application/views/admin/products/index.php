@@ -106,7 +106,7 @@
                                             <td><?= $p['stok']; ?></td>
                                             <td><?= $p['berat']; ?></td>
                                             <td>
-                                                <a href="" id="editShippingCost" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></a>
+                                                <a href="<?= base_url('index.php/pages/edit_product/' . $p['idProduk']); ?>" id="editShippingCost" class="btn btn-warning btn-action mr-1"><i class="fas fa-pencil-alt"></i></a>
                                                 <a href="" class="btn btn-danger btn-action" data-toggle="tooltip" title="Delete" data-confirm="Are You Sure?|This action can not be undone. Do you want to continue?" data-confirm-yes="alert('Deleted')"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>

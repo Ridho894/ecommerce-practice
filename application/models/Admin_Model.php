@@ -114,6 +114,11 @@ class Admin_Model extends CI_Model
         $query = $this->db->get('tbl_produk');
         return $query->result_array();
     }
+    public function getProductById($id)
+    {
+        $query = $this->db->query("SELECT * FROM tbl_produk WHERE idProduk = '$id'");
+        return $query->result_array();
+    }
     public function addProduct($data)
     {
         $this->db->insert('tbl_produk', $data);

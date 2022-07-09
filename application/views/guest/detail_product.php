@@ -26,11 +26,11 @@ foreach ($product as $p) {
     </div>
     <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
         <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-            <img class="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
-            <img class="mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" />
+            <img class="w-full" alt="<?= base_url('assets/uploads/' . $foto); ?>" src="<?= base_url('assets/uploads/' . $foto); ?>" />
+            <!-- <img class=" mt-6 w-full" alt="image of a girl posing" src="https://i.ibb.co/qxkRXSq/component-image-two.png" /> -->
         </div>
         <div class="md:hidden">
-            <img class="w-full" alt="image of a girl posing" src="https://i.ibb.co/QMdWfzX/component-image-one.png" />
+            <img class="w-full" alt="<?= base_url('assets/uploads/' . $foto); ?>" src="<?= base_url('assets/uploads/' . $foto); ?>" />
             <div class="flex items-center justify-between mt-3 space-x-4 md:space-x-0">
                 <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/cYDrVGh/Rectangle-245.png" />
                 <img alt="image-tag-one" class="md:w-48 md:h-48 w-full" src="https://i.ibb.co/f17NXrW/Rectangle-244.png" />
