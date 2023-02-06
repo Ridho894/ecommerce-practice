@@ -69,69 +69,73 @@
                     </div>
                 </div>
             </section>
-            <form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row" enctype="multipart/form-data">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="nama" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="number" name="harga" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="number" name="stok" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Weight</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <input type="number" name="berat" class="form-control">
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <select class="form-control selectric" name="kategori">
-                                        <?php foreach ($category as $c) : ?>
-                                            <option value="<?= $c['id']; ?>"><?= $c['nama']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <textarea id="summernote" name="deskripsi" class="summernote-simple"></textarea>
-                                </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Picture</label>
-                                <div class="col-sm-12 col-md-7">
-                                    <div id="image-preview" class="">
-                                        <label>Choose File</label>
-                                        <input type="file" name="foto" />
+            <?php
+            foreach ($product as $p) :
+            ?>
+                <form method="POST" autocomplete="off" action="<?= base_url(); ?>index.php/pages/process_add_product" class="row" enctype="multipart/form-data">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input value="<?= $p['namaProduk']; ?>" type="text" name="nama" class="form-control">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
-                                <div class="col-sm-12 col-md-7">
-                                    <button type="submit" value="upload" class="btn btn-primary">Create Product</button>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Price</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="number" name="harga" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Stock</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="number" name="stok" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Weight</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <input type="number" name="berat" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Category</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <select class="form-control selectric" name="kategori">
+                                            <?php foreach ($category as $c) : ?>
+                                                <option value="<?= $c['id']; ?>"><?= $c['nama']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Description</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <textarea id="summernote" name="deskripsi" class="summernote-simple"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Picture</label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <div id="image-preview" class="">
+                                            <label>Choose File</label>
+                                            <input type="file" name="foto" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-4">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                    <div class="col-sm-12 col-md-7">
+                                        <button type="submit" value="upload" class="btn btn-primary">Create Product</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            <?php endforeach; ?>
         </div>
         <?php $this->load->view('components/footer'); ?>
     </div>
